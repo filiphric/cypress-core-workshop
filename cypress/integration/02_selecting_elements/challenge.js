@@ -41,7 +41,7 @@ it('cypress commands for traversing and filtering elements', { baseUrl: null }, 
   cy.get('.violet')
 
   // 💯 extra credit challenge: go to docs.cypress.io and find .contains() command. 
-  // try to find a way of selecting the "blue" element, but without changing the 'e'
+  // try to find a way of selecting the "blue" element, but without deleting the 'e'
   // parameter in the code below
   cy.contains('e')
 
