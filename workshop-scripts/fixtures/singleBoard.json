@@ -1,0 +1,14 @@
+{
+  "boards": [
+    {
+      "name": "Shopping list",
+      "user": 0,
+      "id": 123456789,
+      "starred": false,
+      "created": "2022-01-23"
+    }
+  ],
+  "cards": [],
+  "users": [],
+  "lists": []
+}

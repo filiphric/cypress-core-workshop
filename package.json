@@ -1,0 +1,19 @@
+{
+  "name": "cypress-core-workshop",
+  "version": "1.0.0",
+  "description": "Cypress core workshop",
+  "scripts": {
+    "cy:open": "./node_modules/.bin/cypress open",
+    "cy:run": "./node_modules/.bin/cypress run",
+    "postinstall": "git submodule update --init --recursive && cd trelloapp && npm install -s",
+    "start": "cd trelloapp && npm start",
+    "trello": "cd trelloapp && npm start",
+    "sanity-check": "cypress run --config ignoreTestFiles=[\"demo_start.js\",\"challenge.js\",\"*.md\",\"*.html\",\"*.png\"],video=false"
+  },
+  "keywords": [],
+  "author": "Filip Hric (https://filiphric.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^9.3.1"
+  }
+}

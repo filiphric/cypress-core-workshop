@@ -1,0 +1,15 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "env": {
+    "coverage": false,
+    "version": "local"
+  },
+  "viewportHeight": 550,
+  "viewportWidth": 660,
+  "ignoreTestFiles": [
+    "*.md",
+    "*.html",
+    "challenge_solution.js",
+    "*.png"
+  ]
+}

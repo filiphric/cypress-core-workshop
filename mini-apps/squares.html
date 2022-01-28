@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #282a3a;
+        font-family: sans-serif;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        align-items: center;
+        justify-items: center;
+        align-content: center;
+        height: 100vh;
+      }
+      h1 {
+        color: aliceblue;
+        margin: 30px;
+      }
+      div {
+        display: grid;
+        grid-template-rows: auto;
+        align-items: center;
+        justify-items: center;
+      }
+      .square-big {
+        margin: 30px;
+        height: 200px;
+        width: 200px;
+      }
+      .square-small {
+        margin: 10px;
+        height: 100px;
+        width: 100px;
+      }
+      .circle {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%
+      }
+      .red {
+        border: 5px solid #ff657a;
+      }
+      .green {
+        border: 5px solid #bad761;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Square #1</h1>
+    <h1>Square #2</h1>
+    <h1>Square #3</h1>
+    <div class="square-big red">
+      <div class="circle green"></div>
+    </div>
+
+    <div class="square-big green">
+      <div class="circle red"></div>
+    </div>
+
+    <div class="square-big green">
+      <div class="square-small red">
+        <div class="circle green"></div>
+      </div>
+    </div>
+  </body>
+</html>
