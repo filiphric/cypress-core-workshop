@@ -40,4 +40,9 @@ it('cypress commands for traversing and filtering elements', { baseUrl: null }, 
   // select the whole list (with the class "list") using .parent() command
   cy.get('.violet').parent('.list')
 
+  // 💯 extra credit challenge: go to docs.cypress.io and find .contains() command. 
+  // try to find a way of selecting the "blue" element, but without changing the 'e'
+  // parameter in the code below
+  cy.contains('.blue', 'e')
+
 });
