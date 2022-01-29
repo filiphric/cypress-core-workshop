@@ -1,0 +1,41 @@
+{
+  "boards": [
+    {
+      "name": "Things to buy",
+      "user": 0,
+      "id": 123456789,
+      "starred": false,
+      "created": "2022-01-23"
+    }, 
+    {
+      "name": "Work stuff",
+      "user": 0,
+      "id": 987654321,
+      "starred": false,
+      "created": "2022-01-23"
+    }
+  ],
+  "cards": [
+    {
+      "order": 0,
+      "boardId": 987654321,
+      "listId": 67326382115,
+      "name": "Create a new course chapter",
+      "id": 56149928812,
+      "created": "2022-01-29",
+      "deadline": "2022-02-01",
+      "description": "",
+      "completed": false
+    }
+  ],
+  "lists": [
+    {
+      "boardId": 987654321,
+      "name": "To do",
+      "order": 0,
+      "id": 67326382115,
+      "created": "2022-01-29"
+    }
+  ],
+  "users": []
+}

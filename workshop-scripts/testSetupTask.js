@@ -11,7 +11,7 @@ const empty = {
 
 module.exports.setupDb = (data = empty) => {
 
-  fs.writeFileSync(dbPath, JSON.stringify(data))
+  fs.writeFileSync(dbPath, JSON.stringify(data, null, 2))
 
   return data;
 
