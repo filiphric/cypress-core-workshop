@@ -1,0 +1,22 @@
+{
+  "boards": [
+    {
+      "name": "Things to buy",
+      "user": 0,
+      "id": 123456789,
+      "starred": false,
+      "created": "2022-01-23"
+    }
+  ],
+  "cards": [],
+  "lists": [
+    {
+      "boardId": 123456789,
+      "name": "Groceries",
+      "order": 0,
+      "id": 26591427992,
+      "created": "2022-02-11"
+    }
+  ],
+  "users": []
+}

@@ -1,0 +1,85 @@
+{
+  "boards": [
+    {
+      "name": "Shopping list",
+      "user": 0,
+      "id": 123456789,
+      "starred": false,
+      "created": "2022-01-23"
+    }
+  ],
+  "cards": [
+    {
+      "order": 0,
+      "boardId": 123456789,
+      "listId": 68040017610,
+      "name": "Milk",
+      "id": 77958252506,
+      "created": "2022-01-26",
+      "deadline": "2022-03-01",
+      "description": "",
+      "completed": true
+    },
+    {
+      "order": 1,
+      "boardId": 123456789,
+      "listId": 68040017610,
+      "name": "Bread",
+      "id": 42332858477,
+      "created": "2022-01-26",
+      "deadline": "2022-02-14",
+      "description": "",
+      "completed": false
+    },
+    {
+      "order": 2,
+      "boardId": 123456789,
+      "listId": 68040017610,
+      "name": "Juice",
+      "id": 78952659887,
+      "created": "2022-01-26",
+      "deadline": "2022-02-14",
+      "description": "",
+      "completed": true
+    },
+    {
+      "order": 0,
+      "boardId": 123456789,
+      "listId": 87979775072,
+      "name": "Shampoo",
+      "id": 42116527911,
+      "created": "2022-02-11",
+      "deadline": "2022-02-14",
+      "description": "",
+      "completed": false
+    },
+    {
+      "order": 1,
+      "boardId": 123456789,
+      "listId": 87979775072,
+      "name": "Soap",
+      "id": 32483983940,
+      "created": "2022-02-11",
+      "deadline": "2022-03-01",
+      "description": "",
+      "completed": false
+    }
+  ],
+  "lists": [
+    {
+      "boardId": 123456789,
+      "name": "Groceries",
+      "order": 0,
+      "id": 68040017610,
+      "created": "2022-01-26"
+    },
+    {
+      "boardId": 123456789,
+      "name": "Drugstore",
+      "order": 1,
+      "id": 87979775072,
+      "created": "2022-02-11"
+    }
+  ],
+  "users": []
+}

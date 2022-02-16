@@ -9,7 +9,6 @@
   "ignoreTestFiles": [
     "*.md",
     "*.html",
-    "challenge_solution.js",
     "*.png"
   ]
 }

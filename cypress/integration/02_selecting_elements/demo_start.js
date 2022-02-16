@@ -22,7 +22,7 @@ it('cypress commands', { baseUrl: null }, () => {
   cy
     .get('.list')
 
-  // searching for previos element
+  // searching for previous element
   cy
     .contains('violet')
 
