@@ -30,18 +30,3 @@ it('check text of all cards in first list', () => {
     })
 
 });
-
-
-it('check text of all cards in all lists', () => {
-
-  const texts = ['Milk', 'Bread', 'Juice', 'Shampoo', 'Soap']
-
-  cy
-    .get('[data-cy=card-text]')
-    .then( cards => {
-      Array.from(cards).forEach( (card, i) => {
-        expect(card).to.have.text(texts[i])
-      })
-    })
-
-});

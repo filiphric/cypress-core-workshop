@@ -6,7 +6,7 @@ beforeEach( () => {
 
 })
 
-it('check text of the first card', () => {
+it.only('check text of the first card', () => {
 
   cy
     .get('[data-cy="card-text"]')
@@ -31,15 +31,5 @@ it('check text of all cards in first list', () => {
     .get('[data-cy=card-text]')
     .eq(2)
     .should('have.text', 'Juice')
-
-});
-
-
-it('check text of all cards in all lists', () => {
-
-  const texts = ['Milk', 'Bread', 'Juice', 'Shampoo', 'Soap']
-
-  cy
-    .get('[data-cy=card-text]')
 
 });

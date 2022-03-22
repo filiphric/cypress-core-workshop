@@ -16,3 +16,5 @@
 * [my blog on how to avoid waiting in Cypress](https://filiphric.com/waiting-in-cypress-and-how-to-avoid-it)
 * [docs on the topic of retry-ability](https://docs.cypress.io/guides/core-concepts/retry-ability)
 * [docs about chaining commands](https://docs.cypress.io/guides/core-concepts/introduction-to-cypress#Chains-of-Commands)
+* [how to write better command chains in Cypress](https://filiphric.com/writing-better-command-chains-in-cypress)
+* [my blog on the topic of .contains() command](https://filiphric.com/contains-an-overlooked-gem-in-cypress)

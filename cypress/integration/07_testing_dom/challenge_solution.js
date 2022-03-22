@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 // ⚠️ database is filled with data before the test
 
-// chalenge #1: use invoke to get the element text and check that it has the text "Mar"
+// challenge #1: use invoke to get the element text and check that it has the text "Mar"
 it('verify the card has due month Mar', () => {
 
   cy.visit('/board/123456789')
@@ -28,7 +28,7 @@ it('anonymize all card data for screenshot', () => {
 
 })
 
-// challenge #4: there are hidden icons in our app that appear only on hover
+// challenge #3: there are hidden icons in our app that appear only on hover
 // in our next test, we want to make a screenshot of them. use .invoke()
 // command to show them
 it('show hidden icons', () => {
