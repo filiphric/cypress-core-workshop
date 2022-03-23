@@ -21,27 +21,27 @@ it('response gets 201 status', () => {
   
 });
 
-it('response provides additional data', () => {
+it('testing board list', () => {
 
-  const boardName = "I created this board using .request() command!"
+  cy.request({
+    method: 'GET',
+    url: '/api/boards',
+    headers: {
+      accept: 'application/json'
+    }
+  }).then( (board) => {
 
-  cy
-    .request('POST', '/api/boards', {
-      name: boardName
-    })
-    .then( board => {
-      expect(board.body.created).to.be.a('string')
-      expect(board.body.id).to.be.a('number')
-      expect(board.body.name).to.eq(boardName)
-      expect(board.body.starred).to.be.false
-      expect(board.body.user).to.eq(0)
-    })
+    expect(board.status).to.eq(200)
+    expect(board.body).to.have.length(2)
+    expect(board.body[0].id).to.be.a('number')
+    expect(board.body[0].starred).to.be.false
+    expect(board.body[0].user).to.eq(0)
 
-  cy.visit('/')
+  })
   
 });
 
-beforeEach( () => {
+before( () => {
 
   cy.request('POST', '/api/reset')
 
