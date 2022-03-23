@@ -37,7 +37,7 @@ cy.visit('/board/123567351')
 ```
 
 ### Cypress runner
-![Cyoress runner](./runner.png)
+![Cypress runner](./runner.png)
 
 ## Useful reading
 * [documentation for .visit() command](https://docs.cypress.io/api/commands/visit.html#Syntax)
