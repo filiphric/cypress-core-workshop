@@ -5,7 +5,7 @@ Repository for [Cypress core workshop](https://filiphric.com/cypress-core-worksh
 4 module workshop, during which you can learn core principles and patterns. Four 3-hour long online sessions are packed with quality content and many great tips from my more than 5 year long experience with Cypress.io. Workshop is built on "learn by doing" principle. This means you can look forward to many practical examples, working with code and real-life problem solving.
 
 ## Author
-I am Filip. Som lead SDET in the company called [Slido](https://www.sli.do/) and a [Cypress ambassador](https://cypress.io/ambassadors/)
+I am Filip. I am lead SDET in the company called [Slido](https://www.sli.do/) and a [Cypress ambassador](https://cypress.io/ambassadors/)
 
 ## What’s in this repo
 This repo contains all the materials for the workshop. Most of the chapters start with `demo_start.js` and finish with `demo_end.js` file. YOu can find code challenges in the `challenge.js` file and solutions in the `challenge_solution.js` file.
