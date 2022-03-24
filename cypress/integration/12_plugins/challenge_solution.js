@@ -7,5 +7,13 @@
 it('bookmarks a board', () => {
 
   cy.visit('/')
-    
+
+  cy.get('[data-cy=board-item]')
+    .eq(0)
+    .realHover()
+
+  cy.get('[data-cy=star]')
+    .eq(0)
+    .click()
+  
 });

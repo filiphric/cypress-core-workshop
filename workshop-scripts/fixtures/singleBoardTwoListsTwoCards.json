@@ -1,0 +1,52 @@
+{
+  "boards": [
+    {
+      "name": "Cypress workshop",
+      "user": 0,
+      "id": 123456789,
+      "starred": false,
+      "created": "2022-01-23"
+    }
+  ],
+  "cards": [
+    {
+      "order": 0,
+      "boardId": 123456789,
+      "listId": 68040017610,
+      "name": "Explain plugins",
+      "id": 63996831257,
+      "created": "2022-03-24",
+      "deadline": "2022-03-27",
+      "description": "",
+      "completed": false
+    },
+    {
+      "order": 0,
+      "boardId": 123456789,
+      "listId": 87979775072,
+      "name": "Explain intercept",
+      "id": 11946938269,
+      "created": "2022-03-24",
+      "deadline": "2022-03-27",
+      "description": "",
+      "completed": false
+    }
+  ],
+  "lists": [
+    {
+      "boardId": 123456789,
+      "name": "To do",
+      "order": 0,
+      "id": 68040017610,
+      "created": "2022-01-26"
+    },
+    {
+      "boardId": 123456789,
+      "name": "Done",
+      "order": 1,
+      "id": 87979775072,
+      "created": "2022-02-11"
+    }
+  ],
+  "users": []
+}

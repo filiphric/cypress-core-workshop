@@ -2,6 +2,7 @@ const singleBoard = require('./fixtures/singleBoard.json')
 const singleBoardSingleList = require('./fixtures/singleBoardSingleList.json')
 const singleBoardSingleListThreeCards = require('./fixtures/singleBoardSingleListThreeCards.json')
 const singleBoardTwoListsFiveCards = require('./fixtures/singleBoardTwoListsFiveCards.json')
+const singleBoardTwoListsTwoCards = require('./fixtures/singleBoardTwoListsTwoCards.json')
 const twoBoards = require('./fixtures/twoBoards.json')
 const empty = require('./fixtures/empty.json')
 
@@ -32,6 +33,10 @@ const beforeEachTestSeeds = {
   'cypress/integration/07_testing_dom/demo_end.js': singleBoardTwoListsFiveCards,
   'cypress/integration/07_testing_dom/challenge.js': singleBoardTwoListsFiveCards,
   'cypress/integration/07_testing_dom/challenge_solution.js': singleBoardTwoListsFiveCards,
+  'cypress/integration/11_network_stub/demo_start.js': singleBoard,
+  'cypress/integration/11_network_stub/demo_end.js': singleBoard,
+  'cypress/integration/12_plugins/demo_start.js': singleBoardTwoListsTwoCards,
+  'cypress/integration/12_plugins/demo_end.js': singleBoardTwoListsTwoCards,
 }
 
 before( () => {
