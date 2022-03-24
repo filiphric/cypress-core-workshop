@@ -9,6 +9,7 @@
   "ignoreTestFiles": [
     "*.md",
     "*.html",
-    "*.png"
+    "*.png",
+    "*.jpeg"
   ]
 }

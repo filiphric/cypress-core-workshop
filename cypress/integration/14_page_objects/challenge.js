@@ -13,7 +13,7 @@ beforeEach( () => {
 
 })
 
-it('vytvorenie, odškrtnutie a otvorenie karty', function() {
+it('creating, checking and opening a card', function() {
 
   cy.visit(`/board/${this.boardId}`)
   

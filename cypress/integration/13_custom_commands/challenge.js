@@ -5,6 +5,10 @@
 // and use them in test
 it('creates new board, list and card', () => {
 
-  cy.visit('/')
+  // the result should look something like this:
+  // cy.visit('/')
+  // cy.addBoard('new board')
+  // cy.addList('new list')
+  // cy.addCard('new card')
   
 });

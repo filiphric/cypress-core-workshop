@@ -5,7 +5,7 @@
 it('shows list of boards from fixture', () => {
 
   cy.intercept('GET', '/api/boards', {
-    fixture: 'twoBoards'
+      fixture: 'twoBoards'
     })
 
   cy.visit('/');
@@ -63,6 +63,7 @@ it('dynamically changes board name', () => {
   cy.visit('/')
 
   cy.get('[data-cy=board-item]')
+    .eq(0)
     .should('have.text', 'hello!')
 
 })

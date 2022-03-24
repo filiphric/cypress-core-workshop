@@ -23,6 +23,8 @@ const beforeTestSeeds = {
   'cypress/integration/06_chai_assertions/challenge_solution.js': singleBoardTwoListsFiveCards,
   'cypress/integration/10_intercept/demo_start.js': singleBoardSingleList,
   'cypress/integration/10_intercept/demo_end.js': singleBoardSingleList,
+  'cypress/integration/14_page_objects/demo_start.js': singleBoard,
+  'cypress/integration/14_page_objects/demo_start.js': singleBoard,
 
 }
 

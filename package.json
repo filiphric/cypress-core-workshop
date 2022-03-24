@@ -7,14 +7,18 @@
     "cy:run": "./node_modules/.bin/cypress run",
     "postinstall": "git submodule update --init --recursive --remote && cd trelloapp && npm install -s",
     "start": "cd trelloapp && npm start",
-    "trello": "cd trelloapp && npm start",
-    "sanity-check": "cypress run --config ignoreTestFiles=[\"demo_start.js\",\"challenge.js\",\"*.md\",\"*.html\",\"*.png\"],video=false"
+    "trello": "cd trelloapp && npm start"
   },
-  "keywords": [],
+  "keywords": [
+    "cypress",
+    "workshop",
+    "javascript"
+  ],
   "author": "Filip Hric (https://filiphric.com/)",
   "license": "ISC",
   "dependencies": {
     "@4tw/cypress-drag-drop": "^2.1.0",
+    "axios": "^0.26.1",
     "cypress": "^9.4.1"
   }
 }

@@ -6,10 +6,7 @@
 
 Cypress.Commands.add('addBoard', (boardName) => {
 
-  cy.get('[data-cy=create-board]')
-    .click()
-
-  cy.get('[data-cy=new-board-input]')
+  cy.get('[data-cy=first-board]')
     .type(`${boardName}{enter}`)
   
 })

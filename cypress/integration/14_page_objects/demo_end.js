@@ -2,12 +2,12 @@
 
 import { board } from '../../support/pageObjects/board'
 
-it('ohviezdičkovanie boardu a otvorenie', () => {
+it('Bookmark board and open', () => {
 
   cy.visit('/')
 
   board
-    .star(0)
-    .open(0)
+    .star()
+    .open()
   
 });

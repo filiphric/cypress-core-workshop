@@ -1,6 +1,33 @@
 /// <reference types="cypress" />
 
-import { card } from '../../support/pageObjects/card'
+// the following code would properly be in a separate file and imported to the test
+// import { card } from '../../support/pageObjects/card'
+export const card = {
+  create(cardName = 'new card', listNumber = 0) {
+    cy.get('[data-cy=new-card]')
+      .eq(listNumber)
+      .click()
+
+    cy.get('[data-cy=new-card-input]')
+      .type(`${cardName}{enter}`)
+
+    return this
+  },
+  check(number = 0) {
+    cy.get('[data-cy=card-checkbox]')
+      .eq(number)
+      .check()
+
+    return this
+  },
+  openDetail(number = 0) {
+    cy.get('[data-cy=card]')
+      .eq(number)
+      .click()
+
+    return this
+  }
+}
 
 beforeEach( () => {
 
@@ -15,7 +42,7 @@ beforeEach( () => {
 
 })
 
-it('odškrtnutie a otvorenie karty', function() {
+it('creating, checking and opening a card', function() {
 
   cy.visit(`/board/${this.boardId}`)
 
