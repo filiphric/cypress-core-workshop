@@ -8,7 +8,7 @@ Repository for [Cypress core workshop](https://filiphric.com/cypress-core-worksh
 I am Filip. I am lead SDET in the company called [Slido](https://www.sli.do/) and a [Cypress ambassador](https://cypress.io/ambassadors/)
 
 ## What’s in this repo
-This repo contains all the materials for the workshop. Most of the chapters start with `demo_start.js` and finish with `demo_end.js` file. YOu can find code challenges in the `challenge.js` file and solutions in the `challenge_solution.js` file.
+This repo contains all the materials for the workshop. Most of the chapters start with `demo_start.js` and finish with `demo_end.js` file. You can find code challenges in the `challenge.js` file and solutions in the `challenge_solution.js` file.
 
 ## Trello clone app
 Bundled as a submodule is an app that is a clone of a popular [Trello app](https://trello.com). You can create boards, lists and cards. You can drag and drop cards between tests or even upload a picture to the card detail. There’s also a very simple signup and login which will allow you to create private boards
