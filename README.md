@@ -14,7 +14,7 @@ This repo contains all the materials for the workshop. Most of the chapters star
 Bundled as a submodule is an app that is a clone of a popular [Trello app](https://trello.com). You can create boards, lists and cards. You can drag and drop cards between tests or even upload a picture to the card detail. There’s also a very simple signup and login which will allow you to create private boards
 
 ### Installation
-Super simpl
+Super simple
 1. `npm install`
 2. `npm start`
 3. Open your browser on `http://localhost:3000`
