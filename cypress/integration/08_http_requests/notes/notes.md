@@ -35,7 +35,7 @@ cy.request('/todos')
     expect(todos.body[0].text).to.eq('buy milk')
   })
 ```
-- using `.then()` makes more sense than `.should()`, becaus in case of http requests, `.should()`will not make previous command retry
+- using `.then()` makes more sense than `.should()`, because in case of http requests, `.should()`will not make previous command retry
 
 ## Why use `.request()`?
 - requests are done via node, so you can access any domain (etc. check emails)
