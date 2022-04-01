@@ -14,7 +14,7 @@ const beforeTestSeeds = {
   'cypress/integration/03_interaction/challenge_solution.js': twoBoards,
   'cypress/integration/04_simple_assertions/challenge_solution.js': singleBoard,
   'cypress/integration/05_chaining_commands/demo_start.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/05_chaining_commands/end.js': singleBoardTwoListsFiveCards,
+  'cypress/integration/05_chaining_commands/demo_end.js': singleBoardTwoListsFiveCards,
   'cypress/integration/05_chaining_commands/challenge.js': singleBoardTwoListsFiveCards,
   'cypress/integration/05_chaining_commands/challenge_solution.js': singleBoardTwoListsFiveCards,
   'cypress/integration/06_chai_assertions/demo_start.js': singleBoardTwoListsFiveCards,
