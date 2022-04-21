@@ -9,7 +9,7 @@ import { cardsLoadRandomly, cardsLoadSlowly } from '../../../workshop-scripts/ev
 // and the test passes
 it('asserting card titles', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.contains('[data-cy=card]', 'Feb 14 2022')
     .should('contain.text', 'Bread')
@@ -29,7 +29,7 @@ it('has a card with the text "bread"', () => {
   // 😈 evil code
   cardsLoadSlowly(6000) 
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy=card-text]', { timeout: 7000 })
     .should('have.length', 5)
@@ -43,7 +43,7 @@ it('has five cards', () => {
   // 😈 evil code
   cardsLoadSlowly(6000) 
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy=card-text]', { timeout: 7000 })
     .should('have.length', 5)
@@ -58,7 +58,7 @@ it('has a card with the text "bread" with the date of Feb 14 2022', () => {
   // 😈 evil code
   cardsLoadRandomly(3000)
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.contains('[data-cy=card]', 'Feb 14 2022')
     .should('contain.text', 'Bread')

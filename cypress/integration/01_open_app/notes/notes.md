@@ -33,7 +33,7 @@ cy.visit('/')
 ```
 or visit a board like this:
 ```js
-cy.visit('/board/123567351')
+cy.visit('/board/1')
 ```
 
 ### Cypress runner

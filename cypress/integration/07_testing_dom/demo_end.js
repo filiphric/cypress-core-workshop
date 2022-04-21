@@ -4,7 +4,7 @@ const longText = require('../../fixtures/longText.json')[0]
 
 it('get element attributes', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy=card-text]')
     .eq(0)
@@ -16,7 +16,7 @@ it('get element attributes', () => {
 
 it('call a jQuery function on element', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy=footer-link]')
     .invoke('prop', 'href')
@@ -26,7 +26,7 @@ it('call a jQuery function on element', () => {
 
 it('handling long text', () => {
 
-  cy.visit('/board/123456789?card=77958252506')
+  cy.visit('/board/1?card=1')
 
   cy.get('[data-cy="card-description"]')
     .invoke('val', longText)
@@ -35,7 +35,7 @@ it('handling long text', () => {
 
 it('uploading a file', () => {
 
-  cy.visit('/board/123456789?card=77958252506')
+  cy.visit('/board/1?card=1')
 
   cy.get('[type=file]')
     .invoke('show')

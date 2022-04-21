@@ -2,6 +2,6 @@
 
 it('drag and drop', () => {
 
-  cy.visit(`/board/123456789`)
+  cy.visit(`/board/1`)
 
 });

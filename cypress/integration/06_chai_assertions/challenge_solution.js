@@ -2,7 +2,7 @@
 // ⚠️ database is filled with data before the test
 
 beforeEach( () => {
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 }) 
 
 // challenge #1: refactor this test so that it uses a single .then() command

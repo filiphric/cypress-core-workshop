@@ -2,7 +2,7 @@
 
 beforeEach( () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy="new-card"]')
     .click()

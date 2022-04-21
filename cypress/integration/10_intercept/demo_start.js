@@ -2,7 +2,7 @@
 
 it('creating a new card', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy="new-card"]')
     .click()
@@ -14,7 +14,7 @@ it('creating a new card', () => {
 
 it('board has no lists', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy=list]')
     .should('not.exist')
@@ -23,7 +23,7 @@ it('board has no lists', () => {
 
 it('deleting a list', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy="list-options"]')
     .click()

@@ -10,7 +10,7 @@
 // challenge #1: create a new list in your board
 it('creating a new list', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy="add-list-input"]')
     .type('Groceries{enter}')
@@ -20,7 +20,7 @@ it('creating a new list', () => {
 // challenge #2: create a new card in your list
 it('creating a new card', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy="new-card"]')
     .click()
@@ -33,7 +33,7 @@ it('creating a new card', () => {
 // challenge #3: rename the board
 it('renaming a board', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy="board-title"]')
     .clear()
@@ -44,7 +44,7 @@ it('renaming a board', () => {
 // challenge #4: delete the board
 it('deleting a board', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy="board-options"]')
     .click()
@@ -57,7 +57,7 @@ it('deleting a board', () => {
 // challenge #5: open a card and change its description
 it('changing the card description', () => {
 
-  cy.visit('/board/987654321?card=56149928812')
+  cy.visit('/board/2?card=1')
 
   cy.get('[data-cy="card-description"]')
     .type('Add a chapter on interaction{enter}')

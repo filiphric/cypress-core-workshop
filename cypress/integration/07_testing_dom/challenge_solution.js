@@ -4,7 +4,7 @@
 // challenge #1: use invoke to get the element text and check that it has the text "Mar"
 it('verify the card has due month Mar', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy=due-date]')
     .eq(0)
@@ -19,7 +19,7 @@ it('verify the card has due month Mar', () => {
 // achieve this
 it('anonymize all card data for screenshot', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy=card-text], [data-cy=due-date]')
     .invoke('text', '**********')
@@ -33,7 +33,7 @@ it('anonymize all card data for screenshot', () => {
 // command to show them
 it('show hidden icons', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy=card-edit]')
     .invoke('show')
@@ -45,7 +45,7 @@ it('show hidden icons', () => {
 // challenge #4: rename our board by pasting the value into the board title
 it('renaming board', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy=board-title]')
     .invoke('val', 'Things to steal')
@@ -57,7 +57,7 @@ it('renaming board', () => {
 // just as shown in the demo. drop the file into the dropbox
 it('uploading a file', () => {
 
-  cy.visit('/board/123456789?card=77958252506')
+  cy.visit('/board/1?card=1')
 
   cy.get('[data-cy="upload-image"]')
     .selectFile('cypress/fixtures/cypress_logo.png', { action: 'drag-drop' })

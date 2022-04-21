@@ -2,7 +2,7 @@
 
 it('creates a new list with a card in it', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy="add-list-input"]')
     .type('Groceries{enter}')

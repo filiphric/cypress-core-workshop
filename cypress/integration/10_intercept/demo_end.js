@@ -7,7 +7,7 @@ it('creating a new card', () => {
     url: '/api/cards'
   }).as('createCard')
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.get('[data-cy="new-card"]')
     .click()
@@ -31,7 +31,7 @@ it('board has no lists', () => {
     url: /lists/
   }).as('lists')
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.wait('@lists')
 
@@ -42,7 +42,7 @@ it('board has no lists', () => {
 
 it('deleting a list', () => {
 
-  cy.visit('/board/123456789')
+  cy.visit('/board/1')
 
   cy.intercept('DELETE', '/api/lists/*')
     .as('deleteList')

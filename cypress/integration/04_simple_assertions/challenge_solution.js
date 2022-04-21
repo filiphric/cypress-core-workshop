@@ -3,7 +3,7 @@
 beforeEach( () => {
 
   cy
-    .visit('/board/123456789');
+    .visit('/board/1');
 
 })
 
