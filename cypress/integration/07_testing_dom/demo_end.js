@@ -2,18 +2,6 @@
 
 const longText = require('../../fixtures/longText.json')[0]
 
-it('get element attributes', () => {
-
-  cy.visit('/board/1')
-
-  cy.get('[data-cy=card-text]')
-    .eq(0)
-    .invoke('text')
-    .invoke('toLowerCase')
-    .should('contain', 'milk')
-  
-});
-
 it('call a jQuery function on element', () => {
 
   cy.visit('/board/1')

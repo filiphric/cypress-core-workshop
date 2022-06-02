@@ -27,12 +27,12 @@ it('asserting card titles', () => {
 it('has a card with the text "bread"', () => {
 
   // 😈 evil code
-  cardsLoadSlowly(6000) 
+  cardsLoadRandomly(3000)
 
   cy.visit('/board/1')
 
-  cy.get('[data-cy=card-text]', { timeout: 7000 })
-    .should('have.length', 5)
+  cy.get('[data-cy=card-text]')
+    .should('contain.text', 'Bread')
 
 })
 

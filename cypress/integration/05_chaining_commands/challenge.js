@@ -31,7 +31,7 @@ it('has a card with the text "bread"', () => {
 
   cy.get('[data-cy=card-text]')
     .eq(1)
-    .should('have.text', 'Bread')
+    .should('contain.text', 'Bread')
 
 })
 
