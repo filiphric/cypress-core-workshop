@@ -5,7 +5,7 @@
   "scripts": {
     "cy:open": "./node_modules/.bin/cypress open",
     "cy:run": "./node_modules/.bin/cypress run",
-    "postinstall": "git submodule update --init --recursive --remote && cd trelloapp && npm install -s",
+    "postinstall": "git submodule update --init --recursive --remote && cd trelloapp && npm install",
     "start": "cd trelloapp && npm start",
     "trello": "cd trelloapp && npm start"
   },

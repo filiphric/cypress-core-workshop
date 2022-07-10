@@ -12,7 +12,7 @@ it('creating a new card', () => {
   
 });
 
-it('board has no lists', () => {
+it.only('board has no lists', () => {
 
   cy.visit('/board/1')
 
