@@ -1,0 +1,14 @@
+{
+  "window.zoomLevel": 2,
+  "better-comments.tags": [
+    {
+      "tag": "solution explanation:",
+      "color": "#bad761",
+      "strikethrough": false,
+      "underline": true,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    }
+  ]
+}
