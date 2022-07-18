@@ -23,18 +23,12 @@ const beforeTestSeeds = {
   'cypress/e2e/06_chai_assertions/challenge_solution.cy.js': singleBoardTwoListsFiveCards,
   'cypress/e2e/10_intercept/demo_start.cy.js': singleBoardSingleList,
   'cypress/e2e/10_intercept/demo_end.cy.js': singleBoardSingleList,
-  'cypress/e2e/14_page_objects/demo_start.cy.js': singleBoard,
-  'cypress/e2e/14_page_objects/demo_start.cy.js': singleBoard,
 
 }
 
 const beforeEachTestSeeds = {
   'cypress/e2e/04_simple_assertions/demo_start.cy.js': singleBoardSingleList,
   'cypress/e2e/04_simple_assertions/demo_end.cy.js': singleBoardSingleList,
-  'cypress/e2e/07_testing_dom/demo_start.cy.js': singleBoardTwoListsFiveCards,
-  'cypress/e2e/07_testing_dom/demo_end.cy.js': singleBoardTwoListsFiveCards,
-  'cypress/e2e/07_testing_dom/challenge.cy.js': singleBoardTwoListsFiveCards,
-  'cypress/e2e/07_testing_dom/challenge_solution.cy.js': singleBoardTwoListsFiveCards,
   'cypress/e2e/11_network_stub/demo_start.cy.js': singleBoard,
   'cypress/e2e/11_network_stub/demo_end.cy.js': singleBoard,
   'cypress/e2e/12_plugins/demo_start.cy.js': singleBoardTwoListsTwoCards,
@@ -47,7 +41,7 @@ before( () => {
 
   if (dbState) {
     cy.task('setupDb', dbState, { log: false })
-    cy.info('💡 I’ve set up the DB state for you', dbState)
+    cy.info('💡 Database was wiped and seeded before all tests', dbState)
   }
 
 })
@@ -58,7 +52,7 @@ beforeEach( () => {
 
   if (dbState) {
     cy.task('setupDb', dbState, { log: false })
-    cy.info('💡 I’ve set up the DB state for you', dbState)
+    cy.info('💡 Database was wiped and seeded before each test', dbState)
   }
 
 })
