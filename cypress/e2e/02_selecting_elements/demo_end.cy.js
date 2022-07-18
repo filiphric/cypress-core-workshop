@@ -2,11 +2,9 @@
 
 it('class, id, attr', { baseUrl: null }, () => {
 
-  cy
-    .visit('./mini-apps/shapes.html');
+  cy.visit('./mini-apps/shapes.html');
 
-  cy
-    .contains('Shapes') // select using text
+  cy.contains('Shapes') // select using text
     .get('h1') // select using tag
     .get('.square') // select using class
     .get('#circle') // select using id
@@ -16,23 +14,18 @@ it('class, id, attr', { baseUrl: null }, () => {
 
 it('cypress commands', { baseUrl: null }, () => {
 
-  cy
-    .visit('./mini-apps/rainbow.html');
+  cy.visit('./mini-apps/rainbow.html');
 
-  cy
-    .get('li')
+  cy.get('li')
     .first()
 
-  cy
-    .get('li')
+  cy.get('li')
     .eq(2)
 
-  cy
-    .get('.list')
+  cy.get('.list')
     .find('.green')
 
-  cy
-    .contains('violet')
+  cy.contains('violet')
     .prev()
 
 });

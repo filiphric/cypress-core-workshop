@@ -4,8 +4,7 @@
 // or create your own fixture file and use it in the test
 it('shows list of boards from fixture', () => {
 
-  cy
-    .visit('/');
+  cy.visit('/');
 
   cy.get('[data-cy=board-item]')
     .should('have.length', 2)
@@ -15,8 +14,7 @@ it('shows list of boards from fixture', () => {
 // challenge #2: try explicitly defining empty response body instead of using fixture
 it('shows no boards in the list', () => {
 
-  cy
-    .visit('/');
+  cy.visit('/');
 
   cy.contains('Get started!')
     .should('be.visible')
@@ -43,8 +41,7 @@ it('shows error message when creating a board', () => {
 // challenge #4: dynamically change name of a board in the board list
 it('dynamically changes board name', () => {
 
-  cy
-    .intercept({
+  cy.intercept({
       method: 'GET',
       url: '/api/boards'
     }, (req) => {
@@ -53,7 +50,6 @@ it('dynamically changes board name', () => {
       })
     }).as('boards')
 
-  cy
-    .visit('/')
+  cy.visit('/')
 
 })

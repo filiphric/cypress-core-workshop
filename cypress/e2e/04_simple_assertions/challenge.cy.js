@@ -8,8 +8,7 @@
 
 beforeEach( () => {
 
-  cy
-    .visit(); // ⚠️ add ID of your board
+  cy.visit(); // ⚠️ add ID of your board
 
 })
 

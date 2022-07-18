@@ -12,8 +12,7 @@ it('sends a request over API', () => {
 
 it('response gets 201 status', () => {
 
-  cy
-    .request('POST', '/api/boards', {
+  cy.request('POST', '/api/boards', {
       name: "I created this board using .request() command!"
     })
     .its('status')

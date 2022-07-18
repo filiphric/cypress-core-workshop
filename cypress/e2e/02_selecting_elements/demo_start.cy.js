@@ -1,29 +1,23 @@
 it('class, id, attr', { baseUrl: null }, () => {
 
-  cy
-    .visit('./mini-apps/shapes.html');
+  cy.visit('./mini-apps/shapes.html');
 
 })
 
 it('cypress commands', { baseUrl: null }, () => {
 
-  cy
-    .visit('./mini-apps/rainbow.html');
+  cy.visit('./mini-apps/rainbow.html');
 
   // selecting first element
-  cy
-    .get('li')
+  cy.get('li')
 
   // selecting element using index
-  cy
-    .get('li')
+  cy.get('li')
 
   // searching for child element
-  cy
-    .get('.list')
+  cy.get('.list')
 
   // searching for previous element
-  cy
-    .contains('violet')
+  cy.contains('violet')
 
 });
