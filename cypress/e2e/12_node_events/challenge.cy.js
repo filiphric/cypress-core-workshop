@@ -1,13 +1,13 @@
 /// <reference types="cypress" />
 
-// #1: try resetting the database using setupDb script
+// challenge #1: try resetting the database using setupDb script
 it('resetting the database', () => {
 
   cy.visit('/')
     
 });
 
-// #2: now try seeding the database with your own data and open
+// challenge #2: now try seeding the database with your own data and open
 // a board that you have seeded in
 it('seeding the database', () => {
 
@@ -15,7 +15,7 @@ it('seeding the database', () => {
     
 });
 
-// #3: try changing the configuration using config argument in
+// challenge #3: try changing the configuration using config argument in
 // cypress.config.js file
 it('change configuration using setupNodeEvents()', () => {
 

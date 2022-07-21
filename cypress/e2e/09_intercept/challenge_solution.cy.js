@@ -17,7 +17,7 @@ beforeEach( function() {
 
 })
 
-// #1: create a card using UI and use .intercept() command
+// challenge #1: create a card using UI and use .intercept() command
 // for watching the http request for the card creation
 // test the response status code and some of the attributes 
 // of the card you created
@@ -45,7 +45,7 @@ it('creates a card', function() {
   
 });
 
-// #2: create and check the card you created using UI and use .intercept() command
+// challenge #2: create and check the card you created using UI and use .intercept() command
 // to catch the http request that happens. test its status code
 it('checking the card', function() {
 
@@ -68,7 +68,7 @@ it('checking the card', function() {
 
 });
 
-// #3: assert that 'boardId' is part of attributes that is 
+// challenge #3: assert that 'boardId' is part of attributes that is 
 // sent to the server when a new list is created
 it('creates a new list', function() {
 
@@ -89,7 +89,7 @@ it('creates a new list', function() {
   
 });
 
-// #4: delete a list and assert that the server responded 
+// challenge #4: delete a list and assert that the server responded 
 // with a correct status code
 it('deletes a list', function() {
 
