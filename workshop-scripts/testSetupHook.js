@@ -40,7 +40,7 @@ before( () => {
   const dbState = beforeTestSeeds[`${Cypress.spec.relative}`]
 
   if (dbState) {
-    cy.task('setupDb', dbState, { log: false })
+    cy.task('testSetupData', dbState, { log: false })
     cy.info('💡 Database was wiped and seeded before all tests', dbState)
   }
 
@@ -51,7 +51,7 @@ beforeEach( () => {
   const dbState = beforeEachTestSeeds[`${Cypress.spec.relative}`]
 
   if (dbState) {
-    cy.task('setupDb', dbState, { log: false })
+    cy.task('testSetupData', dbState, { log: false })
     cy.info('💡 Database was wiped and seeded before each test', dbState)
   }
 

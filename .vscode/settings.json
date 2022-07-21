@@ -9,6 +9,15 @@
       "backgroundColor": "transparent",
       "bold": true,
       "italic": false
+    },
+    {
+      "tag": "/",
+      "color": "#ffffff",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "#282a3a",
+      "bold": false,
+      "italic": false
     }
   ]
 }
