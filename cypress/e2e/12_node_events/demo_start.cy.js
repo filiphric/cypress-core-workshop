@@ -1,7 +1,14 @@
 /// <reference types="cypress" />
 
-it('drag and drop', () => {
+it('setting up the database', () => {
 
-  cy.visit(`/board/1`)
+  cy.visit(`/`)
 
+});
+
+it('setting up configuration', () => {
+
+  cy.log(Cypress.config('baseUrl'))
+  cy.visit('/')
+  
 });

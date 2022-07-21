@@ -1,31 +1,50 @@
-# Plugins
-- there’s a variety of plugins available on [Cypress docs](https://docs.cypress.io/plugins/directory), but you can also search in [npm directory](https://npmjs.com)
+# Node events
+Cypress tests run in browser. But setting up `setupNodeEvents()` function can give you access to the node.js environment as well. And you can do that while you are running your tests in the browser. This can be super useful for stuff like seeding your database, checking downloaded files and much more. Additionaly, this function can help you out with resolving your configuration, so that you can use the same tests for multiple versions of your app (like local, staging, production).
 
-Most of the plugins follow a common pattern:
+Mentioned cases can be handled by two parameters of the `setupNodeEvents()` function. This function looks something like this in our `cypress.config.js` file:
 
-1. install the plugin by `npm install <plugin name>`
-2. add some kind of import to `cypress/support/index.js` file
-3. sometimes the plugin requires an import to `cypress/plugins/index.js` as well
+```js
+setupNodeEvents(on, config) {
 
-Some awesome plugins out there enable you to:
-- add new commands to the Cypress library
-- do visual testing
-- test emails
-- set up custom test reporters
-- use cucumber bdd
-- filter tests by tags
-- and much more
+}
+```
+Notice the two parameters: `on` and `config`. These can either do something on different runtime events, or handle the final configuration. Let’s take a look at them.
 
-Some of my favourite plugins:
-- [Cypress ESLint Plugin](https://github.com/cypress-io/eslint-plugin-cypress)
-- [cypress-grep plugin for grepping, tagging and filtering tests](https://github.com/cypress-io/cypress-grep)
-- [Code coverage plugin for getting code coverage data from your test run](https://github.com/cypress-io/code-coverage)
-- [Plugin for making accessibility checks during your tests](https://github.com/component-driven/cypress-axe)
-- [Drag and drop plugin](https://github.com/4teamwork/cypress-drag-drop)
-- [cypress-recurse will enable you to recursively run a set of commands](https://github.com/bahmutov/cypress-recurse)
-- [great plugin for testing api that will show your API in browser](https://github.com/bahmutov/cy-api)
-- [plugin for adding missing iframe support](https://gitlab.com/kgroat/cypress-iframe)
-- [add events like hover, swipe etc using chrome devtools protocol](https://github.com/dmtrKovalenko/cypress-real-events)
-- [visual testing by Applitools](https://applitools.com/tutorials/cypress.html)
-- [testing emails using mailosaur](https://github.com/mailosaur/cypress-mailosaur)
-- [restoring a browser session and omitting login](https://github.com/bahmutov/cypress-data-session)
+## on
+This is a function that let’s us tap in to many of the runtime events. The most frequently used is `task` which happens whenever we call `cy.task()` in our test. Cool thing is that we get to define our own tasks and let Cypress knwo what it should do when e.g. a task with a name `seedDatabase` will run. This definitions are inside our `cypress.config.js` file. The whole structure of the browser -> node communication can be explained by a diagram:
+
+![Node events](./nodeEvents.png)
+
+This script can be anything you can run in node! Imagine that this will do a select query in your database or find a file in your filesystem. Options are endless!
+
+## config
+This is an object that contains all the configuration attributes. Having access to this enables us to change the configuration while Cypress is opening. This will work both for interactive (`npx cypress open`) and headless mode (`npx cypress run`). There are many ways we can use this. For example, we can change our config `baseUrl` based on whether we are running on CI or not:
+
+```js
+setupNodeEvents(on, config) {
+  config.baseUrl = process.env.CI ? "https://trello.com" : "http://localhost:3000"
+}
+```
+
+Usually CI/CD services set an environment variable `CI=1`, that’s why the code above work. But we can add our own environment variables and make config resolve according to these. Imagine you want to run all your tests in different resolution while a `MOBILE=true` environment variable is set. All you need to do is to set your `setupNodeEvents()` function:
+
+```js
+setupNodeEvents(on, config) {
+  config.viewportWidth = config.env.MOBILE && 300
+  config.viewportHeight = config.env.MOBILE && 600
+  return config
+}
+```
+
+And then run your tests like this: `npx cypress open --env MOBILE=true`
+
+## How is configuration resolved?
+There are multiple ways of resolving configuration and using `setupNodeEvents()` function is just one of them. [They follow a hierarchy which you can read more about here](https://docs.cypress.io/guides/references/configuration#Resolved-Configuration).
+
+## Useful reading
+* [.task() command documentation](https://docs.cypress.io/api/commands/task)
+* [writing a configuration plugin](https://docs.cypress.io/api/plugins/writing-a-plugin)
+* [Documentation on configuration](https://docs.cypress.io/guides/references/configuration)
+* [Cypress.config() object](https://docs.cypress.io/api/cypress-api/config#Syntax)
+* [Cypress.env() object](https://docs.cypress.io/api/cypress-api/env)
+* [Setting up env variables](https://docs.cypress.io/guides/guides/environment-variables)

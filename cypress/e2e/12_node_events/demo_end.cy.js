@@ -1,18 +1,16 @@
 /// <reference types="cypress" />
+const data = require('../../fixtures/testData.json')
 
-it('drag and drop', () => {
+it('setting up the database', () => {
+    
+  cy.task('seedDatabase', data)
+  cy.visit(`/board/12345`)
 
-  cy.visit(`/board/1`)
+});
 
-  cy.get('[data-cy=card-list]')
-    .eq(0)
-    .as('todo')
+it('setting up configuration', () => {
 
-  cy.get('[data-cy=card-list]')
-    .eq(1)
-    .as('done')
-
-  cy.get('[data-cy=card]')
-    .drag('@done')
-
+  cy.log(Cypress.config('baseUrl'))
+  cy.visit('/')
+  
 });

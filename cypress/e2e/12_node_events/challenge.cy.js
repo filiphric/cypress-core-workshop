@@ -1,11 +1,34 @@
 /// <reference types="cypress" />
 
-// #1: install the cypress-real-events plugin
-// which you can use to trigger actions like hover, swipe, etc
-// using this plugin, write a test wher you will hover over
-// board item in board list and click on the star element
-it('bookmarks a board', () => {
+// #1: try resetting the database using setupDb script
+it('resetting the database', () => {
 
   cy.visit('/')
     
+});
+
+// #2: now try seeding the database with your own data and open
+// a board that you have seeded in
+it('seeding the database', () => {
+
+  cy.visit('/board/12345')
+    
+});
+
+// #3: try changing the configuration using config argument in
+// cypress.config.js file
+it('change configuration using setupNodeEvents()', () => {
+
+  cy.log(Cypress.config('baseUrl'))
+  
+});
+
+// 💯 extra credit challenge: create a "mobile" configuration
+// that will change viewport width and viewport height when you 
+// open cypress like this: "npx cypress open --env MOBILE=true"
+it('switch configuration via CLI', () => {
+
+  cy.log(Cypress.config('viewportWidth'))
+  cy.log(Cypress.config('viewportHeight'))
+  
 });
