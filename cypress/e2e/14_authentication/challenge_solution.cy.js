@@ -1,54 +1,82 @@
 /// <reference types="cypress" />
 
-// the following code would properly be in a separate file and imported to the test
-// import { card } from '../../support/pageObjects/card'
-export const card = {
-  create(cardName = 'new card', listNumber = 0) {
-    cy.get('[data-cy=new-card]')
-      .eq(listNumber)
+// SOLUTION EXPLANATION: challenge #1
+// to make sure cy.session works for you, you need to add 
+// experimentalSessionAndOrigin: true to your cypress.config.js
+// after you’ve done this, simply wrapping the commands in the cy.session() 
+// function will make more than 1 second difference between these tests
+//
+// 🚨 these tests pass but will wipe the database when you run them
+// this means that if you created a new user, it will get deleted
+
+// SOLUTION EXPLANATION: extra credit challenge
+// these solutions overlap, because we have expanded our custom "login"
+// command to take arguments. email will also serve as the name for
+// our session. this way we have two sessions in our tests which we can
+// load at any time of our test (we can even change order of tests,
+// and it will still work!)
+Cypress.Commands.add('login', (email, password) => {
+
+  cy.session(email, () => {
+
+    cy.visit('/login')
+
+    cy.get('[data-cy="login-email"]')
+      .type(email)
+    
+    cy.get('[data-cy="login-password"]')
+      .type(password)
+
+    cy.get('[data-cy="login-submit"]')
       .click()
 
-    cy.get('[data-cy=new-card-input]')
-      .type(`${cardName}{enter}`)
+    cy.get('[data-cy="logged-user"]')
+      .should('be.visible')
 
-    return this
-  },
-  check(number = 0) {
-    cy.get('[data-cy=card-checkbox]')
-      .eq(number)
-      .check()
-
-    return this
-  },
-  openDetail(number = 0) {
-    cy.get('[data-cy=card]')
-      .eq(number)
-      .click()
-
-    return this
-  }
-}
-
-beforeEach( () => {
-
-  cy.request('POST', '/api/boards', { name: 'new board '})
-    .its('body.id').as('boardId')
-    .then( boardId => {
-      cy.request('POST', '/api/lists', {
-        name: 'new list',
-        boardId
-      })
-    })
+  })
 
 })
 
-it('creating, checking and opening a card', function() {
+it('Logged in user sees private board with filip@filiphric.sk', () => {
 
-  cy.visit(`/board/${this.boardId}`)
+  cy.login('filip@filiphric.sk', 'Asdf.1234#')
 
-  card
-    .create('new card')
-    .check()
-    .openDetail()
+  cy.visit('/')
+
+  cy.get('[data-cy=board-item]')
+    .should('be.visible')
   
 });
+
+it('Opens the private board filip@filiphric.sk', () => {
+
+  cy.login('filip@filiphric.sk', 'Asdf.1234#')
+
+  cy.visit('/')
+
+  cy.get('[data-cy=board-item]')
+    .click()
+
+})
+
+it('Logged in user sees private board with filip@example.com', () => {
+
+  cy.login('filip@example.com', 'Asdf.1234#')
+
+  cy.visit('/')
+
+  cy.get('[data-cy=board-item]')
+    .should('be.visible')
+  
+});
+
+it('Opens the private board filip@filiphric.sk', () => {
+
+  cy.login('filip@example.com', 'Asdf.1234#')
+
+  cy.visit('/')
+
+  cy.get('[data-cy=board-item]')
+    .click()
+
+})

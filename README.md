@@ -31,6 +31,14 @@ For some of the workshop examples, I seed the database in the background. This s
 ### Application utilities
 By typing `F2` key in the application, a small toolset appears that will allow you to reset your application to a desired state. You can delete boards, lists, cards, users or everything. This is useful when playing with the application manually.
 
+### Updates to the repo
+If there are changes made to the repo during the workshop, you can pull them easily by using these commands in your terminal:
+```
+git stash -u
+git pull
+git stash pop
+```
+
 # API documentation
 
 **`GET`** `/api/boards`

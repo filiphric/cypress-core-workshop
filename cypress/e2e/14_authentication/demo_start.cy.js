@@ -1,13 +1,19 @@
 /// <reference types="cypress" />
 
-it('Bookmark board and open', () => {
+it.only('Logged in user sees private board', () => {
 
   cy.visit('/')
 
-  cy.get('[data-cy=star]')
-    .click({force: true})
+  cy.get('[data-cy=board-item]')
+    .should('be.visible')
+  
+});
+
+it('Opens the private board', () => {
+
+  cy.visit('/')
 
   cy.get('[data-cy=board-item]')
     .click()
-  
-});
+
+})

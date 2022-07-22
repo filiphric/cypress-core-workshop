@@ -9,6 +9,6 @@ module.exports = defineConfig({
       registerWorkshopScripts(on)
     },
     baseUrl: 'http://localhost:3000',
-    excludeSpecPattern: "*.{html|png|jpeg}",
+    excludeSpecPattern: "*.{html|md|png|jpeg}"
   },
 })

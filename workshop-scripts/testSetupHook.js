@@ -3,6 +3,8 @@ const singleBoardSingleList = require('./fixtures/singleBoardSingleList.json')
 const singleBoardSingleListThreeCards = require('./fixtures/singleBoardSingleListThreeCards.json')
 const singleBoardTwoListsFiveCards = require('./fixtures/singleBoardTwoListsFiveCards.json')
 const singleBoardTwoListsTwoCards = require('./fixtures/singleBoardTwoListsTwoCards.json')
+const singleBoardSingleListThreeCardsSingleUser = require('./fixtures/singleBoardSingleListThreeCardsSingleUser.json')
+const singleBoardSingleListThreeCardsTwoUsers = require('./fixtures/singleBoardSingleListThreeCardsTwoUsers.json')
 const twoBoards = require('./fixtures/twoBoards.json')
 const empty = require('./fixtures/empty.json')
 
@@ -23,7 +25,9 @@ const beforeTestSeeds = {
   'cypress/e2e/06_chai_assertions/challenge_solution.cy.js': singleBoardTwoListsFiveCards,
   'cypress/e2e/10_intercept/demo_start.cy.js': singleBoardSingleList,
   'cypress/e2e/10_intercept/demo_end.cy.js': singleBoardSingleList,
-
+  'cypress/e2e/14_authentication/demo_start.cy.js': singleBoardSingleListThreeCardsSingleUser,
+  'cypress/e2e/14_authentication/demo_end.cy.js': singleBoardSingleListThreeCardsSingleUser,
+  'cypress/e2e/14_authentication/challenge_solution.cy.js': singleBoardSingleListThreeCardsTwoUsers
 }
 
 const beforeEachTestSeeds = {
