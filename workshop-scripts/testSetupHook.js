@@ -3,42 +3,40 @@ const singleBoardSingleList = require('./fixtures/singleBoardSingleList.json')
 const singleBoardSingleListThreeCards = require('./fixtures/singleBoardSingleListThreeCards.json')
 const singleBoardTwoListsFiveCards = require('./fixtures/singleBoardTwoListsFiveCards.json')
 const singleBoardTwoListsTwoCards = require('./fixtures/singleBoardTwoListsTwoCards.json')
+const singleBoardSingleListThreeCardsSingleUser = require('./fixtures/singleBoardSingleListThreeCardsSingleUser.json')
+const singleBoardSingleListThreeCardsTwoUsers = require('./fixtures/singleBoardSingleListThreeCardsTwoUsers.json')
 const twoBoards = require('./fixtures/twoBoards.json')
 const empty = require('./fixtures/empty.json')
 
 const beforeTestSeeds = {
-  'cypress/integration/01_open_app/demo_end.js': singleBoard,
-  'cypress/integration/01_open_app/challenge_solution.js': singleBoardSingleListThreeCards,
-  'cypress/integration/03_interaction/demo_start.js': twoBoards,
-  'cypress/integration/03_interaction/demo_end.js': twoBoards,
-  'cypress/integration/03_interaction/challenge_solution.js': twoBoards,
-  'cypress/integration/04_simple_assertions/challenge_solution.js': singleBoard,
-  'cypress/integration/05_chaining_and_retryability/demo_start.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/05_chaining_and_retryability/demo_end.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/05_chaining_and_retryability/challenge.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/05_chaining_and_retryability/challenge_solution.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/06_chai_assertions/demo_start.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/06_chai_assertions/end.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/06_chai_assertions/challenge.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/06_chai_assertions/challenge_solution.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/10_intercept/demo_start.js': singleBoardSingleList,
-  'cypress/integration/10_intercept/demo_end.js': singleBoardSingleList,
-  'cypress/integration/14_page_objects/demo_start.js': singleBoard,
-  'cypress/integration/14_page_objects/demo_start.js': singleBoard,
-
+  'cypress/e2e/01_open_app/demo_end.cy.js': singleBoard,
+  'cypress/e2e/01_open_app/challenge_solution.cy.js': singleBoardSingleListThreeCards,
+  'cypress/e2e/03_interaction/demo_start.cy.js': twoBoards,
+  'cypress/e2e/03_interaction/demo_end.cy.js': twoBoards,
+  'cypress/e2e/03_interaction/challenge_solution.cy.js': twoBoards,
+  'cypress/e2e/04_simple_assertions/challenge_solution.cy.js': singleBoard,
+  'cypress/e2e/05_chaining_and_retryability/demo_start.cy.js': singleBoardTwoListsFiveCards,
+  'cypress/e2e/05_chaining_and_retryability/demo_end.cy.js': singleBoardTwoListsFiveCards,
+  'cypress/e2e/05_chaining_and_retryability/challenge.cy.js': singleBoardTwoListsFiveCards,
+  'cypress/e2e/05_chaining_and_retryability/challenge_solution.cy.js': singleBoardTwoListsFiveCards,
+  'cypress/e2e/06_chai_assertions/demo_start.cy.js': singleBoardTwoListsFiveCards,
+  'cypress/e2e/06_chai_assertions/end.cy.js': singleBoardTwoListsFiveCards,
+  'cypress/e2e/06_chai_assertions/challenge.cy.js': singleBoardTwoListsFiveCards,
+  'cypress/e2e/06_chai_assertions/challenge_solution.cy.js': singleBoardTwoListsFiveCards,
+  'cypress/e2e/10_intercept/demo_start.cy.js': singleBoardSingleList,
+  'cypress/e2e/10_intercept/demo_end.cy.js': singleBoardSingleList,
+  'cypress/e2e/14_authentication/demo_start.cy.js': singleBoardSingleListThreeCardsSingleUser,
+  'cypress/e2e/14_authentication/demo_end.cy.js': singleBoardSingleListThreeCardsSingleUser,
+  'cypress/e2e/14_authentication/challenge_solution.cy.js': singleBoardSingleListThreeCardsTwoUsers
 }
 
 const beforeEachTestSeeds = {
-  'cypress/integration/04_simple_assertions/demo_start.js': singleBoardSingleList,
-  'cypress/integration/04_simple_assertions/demo_end.js': singleBoardSingleList,
-  'cypress/integration/07_testing_dom/demo_start.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/07_testing_dom/demo_end.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/07_testing_dom/challenge.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/07_testing_dom/challenge_solution.js': singleBoardTwoListsFiveCards,
-  'cypress/integration/11_network_stub/demo_start.js': singleBoard,
-  'cypress/integration/11_network_stub/demo_end.js': singleBoard,
-  'cypress/integration/12_plugins/demo_start.js': singleBoardTwoListsTwoCards,
-  'cypress/integration/12_plugins/demo_end.js': singleBoardTwoListsTwoCards,
+  'cypress/e2e/04_simple_assertions/demo_start.cy.js': singleBoardSingleList,
+  'cypress/e2e/04_simple_assertions/demo_end.cy.js': singleBoardSingleList,
+  'cypress/e2e/11_network_stub/demo_start.cy.js': singleBoard,
+  'cypress/e2e/11_network_stub/demo_end.cy.js': singleBoard,
+  'cypress/e2e/12_plugins/demo_start.cy.js': singleBoardTwoListsTwoCards,
+  'cypress/e2e/12_plugins/demo_end.cy.js': singleBoardTwoListsTwoCards,
 }
 
 before( () => {
@@ -46,8 +44,8 @@ before( () => {
   const dbState = beforeTestSeeds[`${Cypress.spec.relative}`]
 
   if (dbState) {
-    cy.task('setupDb', dbState, { log: false })
-    cy.info('💡 I’ve set up the DB state for you', dbState)
+    cy.task('testSetupData', dbState, { log: false })
+    cy.info('💡 Database was wiped and seeded before all tests', dbState)
   }
 
 })
@@ -57,8 +55,8 @@ beforeEach( () => {
   const dbState = beforeEachTestSeeds[`${Cypress.spec.relative}`]
 
   if (dbState) {
-    cy.task('setupDb', dbState, { log: false })
-    cy.info('💡 I’ve set up the DB state for you', dbState)
+    cy.task('testSetupData', dbState, { log: false })
+    cy.info('💡 Database was wiped and seeded before each test', dbState)
   }
 
 })
