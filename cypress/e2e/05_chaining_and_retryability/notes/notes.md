@@ -9,7 +9,7 @@
 
 ## Retry-ability
 - this is one of the core concepts in Cypress. You might know this as "fluent-wait" if you are coming from Selenium
-- by default, Cypress waits for 4000 milliseconds, but this can be adjusted in the command, test, or globally in `cypress.json` file
+- by default, Cypress waits for 4000 milliseconds, but this can be adjusted in the command, test, or globally in `cypress.config.js` file
 - `.should()` command will make the previous command retry, so think about that when you are testing something that might still render while your test is running
 
 ## Useful reading

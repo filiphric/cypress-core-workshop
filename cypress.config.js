@@ -8,7 +8,6 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       registerWorkshopScripts(on)
     },
-    baseUrl: 'http://localhost:3000',
-    excludeSpecPattern: "*.{html|md|png|jpeg}"
+    baseUrl: 'http://localhost:3000'
   },
 })

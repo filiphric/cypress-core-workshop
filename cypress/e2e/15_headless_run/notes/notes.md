@@ -1,16 +1,15 @@
 # Headless (run) mode
 Headless mode allows us to run our tests via terminal.
 
-By default, Cypress will run all files in `cypress/integration` folder. This can be configured in `cypress.json` with options:
+By default, Cypress will run all files in `cypress/e2e` folder. This can be configured in `cypress.config.js` with options:
 ```json
-  "integrationFolder": "cypress/integration"
-  "testFiles": "**/*.*"
-  "ignoreTestFiles": ""
+  "specPattern": "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}"
+  "ignoreSpecPattern": "**/*.md"
 ```
 
 Or can be defined as a flag in terminal:
 ```
-npx cypress run --spec cypress/integration/15_headless_run.js
+npx cypress run --spec cypress/e2e/15_headless_run.js
 ```
 
 There are many other flags that can be found in the [docs](https://docs.cypress.io/guides/guides/command-line#cypress-run)
@@ -34,5 +33,5 @@ cypress
 ## Useful reading
 * [my blog on how you can use module API](https://filiphric.com/test-grepping-in-cypress-using-module-api)
 * [docs for headless mode](https://docs.cypress.io/guides/guides/command-line.html#cypress-run)
-* [setting up filtering using cypress.json](https://docs.cypress.io/guides/references/configuration.html#Folders-Files)
+* [setting up filtering using cypress.config.js](https://docs.cypress.io/guides/references/configuration.html#Folders-Files)
 * [cross browser testing in Cypress](https://docs.cypress.io/guides/guides/cross-browser-testing.html#Periodic-Basis)

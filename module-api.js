@@ -6,7 +6,7 @@ cypress
   .run({
     browser: 'firefox',
     headed: true,
-    spec: 'cypress/integration/15_headless_run/test_pass.js',
+    spec: 'cypress/e2e/15_headless_run/test_pass.js',
     config: {
       video: false
     }

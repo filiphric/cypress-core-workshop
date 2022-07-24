@@ -21,10 +21,12 @@ cy.visit('http://localhost:3000')
 `'http://localhost:3000'` - is a parameter of our `.visit()` function. tells the function which location we want to visit
 
 ## Cypress configuration
-Instead of writing a full URL, we can define a `baseUrl` in `cypress.json` file:
-```json
+Instead of writing a full URL, we can define a `baseUrl` in `cypress.config.js` file:
+```js
 {
-  "baseUrl": "http://localhost:3000"
+  e2e: {
+    baseUrl: "http://localhost:3000"
+  }
 }
 ```
 This means we can open our home page like this:
