@@ -41,8 +41,10 @@ const beforeEachTestSeeds = {
 
 before( () => {
 
-  const dbState = beforeTestSeeds[`${Cypress.spec.relative}`]
+  const path = Cypress.platform.includes('win') ? Cypress.spec.relative.replaceAll('\\', '/') : Cypress.spec.relative
 
+  const dbState = beforeTestSeeds[`${path}`]
+  
   if (dbState) {
     cy.task('testSetupData', dbState, { log: false })
     cy.info('💡 Database was wiped and seeded before all tests', dbState)
@@ -52,7 +54,9 @@ before( () => {
 
 beforeEach( () => {
 
-  const dbState = beforeEachTestSeeds[`${Cypress.spec.relative}`]
+  const path = Cypress.platform.includes('win') ? Cypress.spec.relative.replaceAll('\\', '/') : Cypress.spec.relative
+
+  const dbState = beforeTestSeeds[`${path}`]
 
   if (dbState) {
     cy.task('testSetupData', dbState, { log: false })
