@@ -23,8 +23,8 @@ const beforeTestSeeds = {
   'cypress/e2e/06_chai_assertions/end.cy.js': singleBoardTwoListsFiveCards,
   'cypress/e2e/06_chai_assertions/challenge.cy.js': singleBoardTwoListsFiveCards,
   'cypress/e2e/06_chai_assertions/challenge_solution.cy.js': singleBoardTwoListsFiveCards,
-  'cypress/e2e/10_intercept/demo_start.cy.js': singleBoardSingleList,
-  'cypress/e2e/10_intercept/demo_end.cy.js': singleBoardSingleList,
+  'cypress/e2e/09_intercept/demo_start.cy.js': singleBoardSingleList,
+  'cypress/e2e/09_intercept/demo_end.cy.js': singleBoardSingleList,
   'cypress/e2e/14_authentication/demo_start.cy.js': singleBoardSingleListThreeCardsSingleUser,
   'cypress/e2e/14_authentication/demo_end.cy.js': singleBoardSingleListThreeCardsSingleUser,
   'cypress/e2e/14_authentication/challenge_solution.cy.js': singleBoardSingleListThreeCardsTwoUsers
@@ -35,8 +35,8 @@ const beforeEachTestSeeds = {
   'cypress/e2e/04_simple_assertions/demo_end.cy.js': singleBoardSingleList,
   'cypress/e2e/11_network_stub/demo_start.cy.js': singleBoard,
   'cypress/e2e/11_network_stub/demo_end.cy.js': singleBoard,
-  'cypress/e2e/12_plugins/demo_start.cy.js': singleBoardTwoListsTwoCards,
-  'cypress/e2e/12_plugins/demo_end.cy.js': singleBoardTwoListsTwoCards,
+  'cypress/e2e/11_plugins/demo_start.cy.js': singleBoardTwoListsTwoCards,
+  'cypress/e2e/11_plugins/demo_end.cy.js': singleBoardTwoListsTwoCards,
 }
 
 before( () => {
