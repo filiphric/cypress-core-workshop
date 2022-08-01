@@ -56,7 +56,7 @@ beforeEach( () => {
 
   const path = Cypress.platform.includes('win') ? Cypress.spec.relative.replaceAll('\\', '/') : Cypress.spec.relative
 
-  const dbState = beforeTestSeeds[`${path}`]
+  const dbState = beforeEachTestSeeds[`${path}`]
 
   if (dbState) {
     cy.task('testSetupData', dbState, { log: false })
