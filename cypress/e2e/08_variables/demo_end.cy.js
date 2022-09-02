@@ -3,15 +3,13 @@
 beforeEach(() => {
 
   cy.request('POST', '/api/boards', { name: 'new board' })
-    .as('board')
+    .its('body.id')
+    .as('boardId')
 
 }) 
 
-it('creating a new list', function() {
+it('opening a board', function() {
 
-  cy.request('POST', '/api/lists', {
-    name: 'new list',
-    boardId: this.board.body.id
-  })
+  cy.visit(`/board/${this.boardId}`)
 
 })

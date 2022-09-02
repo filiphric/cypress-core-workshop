@@ -1,16 +1,14 @@
 /// <reference types="cypress" />
 
-it('creating a new list', function() {
+it('opening a board', function() {
 
   cy.request('POST', '/api/boards', { name: 'new board' })
     .then( ({ body }) => {
 
-      cy.request('POST', '/api/lists', {
-        name: 'new list',
-        boardId: body.id
-      })
+      const boardId = body.id
+
+      cy.visit(`/board/${boardId}`)
 
     })
-
 
 })
