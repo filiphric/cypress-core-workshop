@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 // ⚠️ you can change "it" to "it.only" to run a single test
-// challenge #1: select the square using class, circle using id, triangle, atribute and heading using text
+// challenge #1: select the square using class, circle using id, triangle using attribute and heading using text
 it('class, id, attr', { baseUrl: null }, () => {
 
   cy.visit('./mini-apps/shapes.html');
