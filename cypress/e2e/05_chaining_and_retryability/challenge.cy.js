@@ -60,7 +60,6 @@ it('has a card with the text "bread" with the date of Feb 14 2022', () => {
   cy.visit('/board/1')
 
   cy.get('[data-cy=list]')
-    .first()
     .find('[data-cy=card-list]')
     .contains('[data-cy=card]', 'Feb 14 2022')
     .find('[data-cy=card-text]')
