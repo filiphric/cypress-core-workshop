@@ -39,7 +39,7 @@ it('cards are checked', () => {
     .should('be.checked')
 
   cy.get('@card-checkboxes')
-    .eq(1)
+    .eq(2)
     .should('be.checked')
 
 });
