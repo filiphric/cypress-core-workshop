@@ -19,6 +19,6 @@
   "dependencies": {
     "@4tw/cypress-drag-drop": "^2.1.0",
     "axios": "^0.26.1",
-    "cypress": "^10.3.0"
+    "cypress": "^10.9.0"
   }
 }
