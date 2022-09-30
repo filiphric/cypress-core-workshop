@@ -8,7 +8,6 @@ setupNodeEvents(on, config) {
 
 }
 ```
-Notice the two parameters: `on` and `config`. These can either do something on different runtime events, or handle the final configuration. Let’s take a look at them.
 
 ## on
 This is a function that let’s us tap in to many of the runtime events. The most frequently used is `task` which happens whenever we call `cy.task()` in our test. Cool thing is that we get to define our own tasks and let Cypress knwo what it should do when e.g. a task with a name `seedDatabase` will run. This definitions are inside our `cypress.config.js` file. The whole structure of the browser -> node communication can be explained by a diagram:
@@ -18,15 +17,7 @@ This is a function that let’s us tap in to many of the runtime events. The mos
 This script can be anything you can run in node! Imagine that this will do a select query in your database or find a file in your filesystem. Options are endless!
 
 ## config
-This is an object that contains all the configuration attributes. Having access to this enables us to change the configuration while Cypress is opening. This will work both for interactive (`npx cypress open`) and headless mode (`npx cypress run`). There are many ways we can use this. For example, we can change our config `baseUrl` based on whether we are running on CI or not:
-
-```js
-setupNodeEvents(on, config) {
-  config.baseUrl = process.env.CI ? "https://trello.com" : "http://localhost:3000"
-}
-```
-
-Usually CI/CD services set an environment variable `CI=1`, that’s why the code above work. But we can add our own environment variables and make config resolve according to these. Imagine you want to run all your tests in different resolution while a `MOBILE=true` environment variable is set. All you need to do is to set your `setupNodeEvents()` function:
+This is an object that contains all the configuration attributes. Having access to this enables us to change the configuration while Cypress is opening. This will work both for interactive (`npx cypress open`) and headless mode (`npx cypress run`). There are many ways we can use this. Imagine you want to run all your tests in different resolution while a `MOBILE=true` environment variable is set. All you need to do is to set your `setupNodeEvents()` function:
 
 ```js
 setupNodeEvents(on, config) {
@@ -44,6 +35,7 @@ There are multiple ways of resolving configuration and using `setupNodeEvents()`
 ## Useful reading
 * [.task() command documentation](https://docs.cypress.io/api/commands/task)
 * [writing a configuration plugin](https://docs.cypress.io/api/plugins/writing-a-plugin)
+* [my blog on writing configuration plugin (v9)](https://filiphric.com/create-a-configuration-plugin-in-cypress)
 * [Documentation on configuration](https://docs.cypress.io/guides/references/configuration)
 * [Cypress.config() object](https://docs.cypress.io/api/cypress-api/config#Syntax)
 * [Cypress.env() object](https://docs.cypress.io/api/cypress-api/env)

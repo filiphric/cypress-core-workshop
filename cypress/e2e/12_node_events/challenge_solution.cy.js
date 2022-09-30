@@ -47,7 +47,7 @@ it('seeding the database', () => {
 
 // SOLUTION EXPLANATION: challenge #3
 // setupNodeEvents() function has access to the whole configuration
-// so all you need to do is to resolve the baseUrl in that function_
+// so all you need to do is to resolve the baseUrl in that function
 // 
 /// setupNodeEvents(on, config) {
 ///   config.baseUrl = "https://cypress.io"

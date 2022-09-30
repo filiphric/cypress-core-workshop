@@ -7,10 +7,3 @@ it('setting up the database', () => {
   cy.visit(`/board/12345`)
 
 });
-
-it('setting up configuration', () => {
-
-  cy.log(Cypress.config('baseUrl'))
-  cy.visit('/')
-  
-});

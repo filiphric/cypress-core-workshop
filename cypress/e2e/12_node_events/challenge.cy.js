@@ -15,7 +15,7 @@ it('seeding the database', () => {
     
 });
 
-// challenge #3: try changing the configuration using config argument in
+// challenge #3: try changing the baseUrl using setupNodeEvents function in
 // cypress.config.js file
 it('change configuration using setupNodeEvents()', () => {
 
