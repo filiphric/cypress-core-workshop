@@ -1,18 +1,15 @@
 /// <reference types="cypress" />
 
-it('drag and drop', () => {
+it('api testing', () => {
 
-  cy.visit(`/board/1`)
+  cy.api('POST', '/api/boards', {
+    name: "Hello world"
+  })
 
-  cy.get('[data-cy=card-list]')
-    .eq(0)
-    .as('todo')
+  cy.api('PATCH', '/api/boards/1', {
+    starred: true
+  })
 
-  cy.get('[data-cy=card-list]')
-    .eq(1)
-    .as('done')
-
-  cy.get('[data-cy=card]')
-    .drag('@done')
+  cy.api('DELETE', '/api/boards/1')
 
 });

@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
-it('drag and drop', () => {
+it('api testing', () => {
 
-  cy.visit(`/board/1`)
+  
 
 });

@@ -17,3 +17,21 @@ it('bookmarks a board', () => {
     .click()
   
 });
+
+// challenge #2: install drag and drop plugin for Cypress and try it out
+it('drags a card to second list', () => {
+
+  cy.visit(`/board/1`)
+
+  cy.get('[data-cy=card-list]')
+    .eq(0)
+    .as('todo')
+
+  cy.get('[data-cy=card-list]')
+    .eq(1)
+    .as('done')
+
+  cy.get('[data-cy=card]')
+    .drag('@done')
+
+});

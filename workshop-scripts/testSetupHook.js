@@ -1,3 +1,4 @@
+const path = require('path');
 const singleBoard = require('./fixtures/singleBoard.json')
 const singleBoardSingleList = require('./fixtures/singleBoardSingleList.json')
 const singleBoardSingleListThreeCards = require('./fixtures/singleBoardSingleListThreeCards.json')
@@ -35,15 +36,17 @@ const beforeEachTestSeeds = {
   'cypress/e2e/04_simple_assertions/demo_end.cy.js': singleBoardSingleList,
   'cypress/e2e/11_network_stub/demo_start.cy.js': singleBoard,
   'cypress/e2e/11_network_stub/demo_end.cy.js': singleBoard,
-  'cypress/e2e/11_plugins/demo_start.cy.js': singleBoardTwoListsTwoCards,
-  'cypress/e2e/11_plugins/demo_end.cy.js': singleBoardTwoListsTwoCards,
+  'cypress/e2e/11_plugins/demo_start.cy.js': empty,
+  'cypress/e2e/11_plugins/demo_end.cy.js': empty,
+  'cypress/e2e/11_plugins/challenge.cy.js': singleBoardTwoListsTwoCards,
+  'cypress/e2e/11_plugins/challenge_solution.cy.js': singleBoardTwoListsTwoCards,
 }
 
 before( () => {
 
-  const path = path.normalize(Cypress.spec.relative)
+  const testPath = path.normalize(Cypress.spec.relative)
 
-  const dbState = beforeTestSeeds[`${path}`]
+  const dbState = beforeTestSeeds[`${testPath}`]
   
   if (dbState) {
     cy.task('testSetupData', dbState, { log: false })
@@ -54,9 +57,9 @@ before( () => {
 
 beforeEach( () => {
 
-  const path = path.normalize(Cypress.spec.relative)
+  const testPath = path.normalize(Cypress.spec.relative)
 
-  const dbState = beforeEachTestSeeds[`${path}`]
+  const dbState = beforeEachTestSeeds[`${testPath}`]
 
   if (dbState) {
     cy.task('testSetupData', dbState, { log: false })

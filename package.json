@@ -17,8 +17,8 @@
   "author": "Filip Hric (https://filiphric.com/)",
   "license": "ISC",
   "dependencies": {
-    "@4tw/cypress-drag-drop": "^2.1.0",
     "axios": "^0.26.1",
-    "cypress": "^12.3.0"
+    "cypress": "^12.3.0",
+    "cypress-plugin-api": "^2.9.1"
   }
 }

@@ -9,3 +9,8 @@ it('bookmarks a board', () => {
   cy.visit('/')
     
 });
+
+// challenge #2: install drag and drop plugin for Cypress and try it out
+it('drags a card to second list', () => {
+  
+});
