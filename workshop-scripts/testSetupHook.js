@@ -41,7 +41,7 @@ const beforeEachTestSeeds = {
 
 before( () => {
 
-  const path = Cypress.platform.includes('win') ? Cypress.spec.relative.replaceAll('\\', '/') : Cypress.spec.relative
+  const path = path.normalize(Cypress.spec.relative)
 
   const dbState = beforeTestSeeds[`${path}`]
   
@@ -54,7 +54,7 @@ before( () => {
 
 beforeEach( () => {
 
-  const path = Cypress.platform.includes('win') ? Cypress.spec.relative.replaceAll('\\', '/') : Cypress.spec.relative
+  const path = path.normalize(Cypress.spec.relative)
 
   const dbState = beforeEachTestSeeds[`${path}`]
 
