@@ -13,26 +13,18 @@ it('opens a card with due date on 1st March', () => {
 
 })
 
-it('loads cards in our list very slowly', () => {
+it('actions, queries, assertions',  { defaultCommandTimeout: 10000 }, () => {
 
-  // 😈 evil code
-  cardsLoadSlowly(5000) 
-
+  // action
   cy.visit('/board/1')
 
-  cy.get('[data-cy=card-text]', { timeout: 6000 })
-    .should('have.length', 5)
-  
-});
+  // query
+  cy.get('[data-cy=card]')
+    .eq(2)
+    .should('contain.text', 'Milk') // assertion
 
-it('loads cards in our list randomly', () => {
+  cy.get('[data-cy=due-date]')
+    .eq(2)
+    .should('have.text', 'Mar 01 2022')
 
-  // 😈 evil code
-  cardsLoadRandomly(3000) 
-
-  cy.visit('/board/1')
-
-  cy.get('[data-cy=card-text]')
-    .should('contain.text', 'Bread')
-  
 });

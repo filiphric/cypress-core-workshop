@@ -3,25 +3,17 @@
 it('opens a card with due date on 1st March', () => {
 
   cy.visit('/board/1')
-    
+
+  cy.contains('Mar 01 2022')
+
 })
 
-it('loads cards in our list very slowly', () => {
+it('actions, queries, assertions', () => {
 
   cy.visit('/board/1')
 
-  cy.get('[data-cy=card-text]')
-    .should('have.length', 5)
-  
+  cy.get('[data-cy=card]')
+    .eq(2)
+    .should('contain.text', 'Milk')
+
 });
-
-it('loads cards in our list randomly', () => {
-
-  cy.visit('/board/1')
-
-  cy.get('[data-cy=card-text]')
-    .eq(1)
-    .should('contain.text', 'Bread')
-  
-});
-
