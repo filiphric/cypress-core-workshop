@@ -1,4 +1,3 @@
-const path = require('path');
 const singleBoard = require('./fixtures/singleBoard.json')
 const singleBoardSingleList = require('./fixtures/singleBoardSingleList.json')
 const singleBoardSingleListThreeCards = require('./fixtures/singleBoardSingleListThreeCards.json')
@@ -44,9 +43,9 @@ const beforeEachTestSeeds = {
 
 before( () => {
 
-  const testPath = path.normalize(Cypress.spec.relative)
+  const path = Cypress.platform.includes('win') ? Cypress.spec.relative.replaceAll('\\', '/') : Cypress.spec.relative
 
-  const dbState = beforeTestSeeds[`${testPath}`]
+  const dbState = beforeTestSeeds[`${path}`]
   
   if (dbState) {
     cy.task('testSetupData', dbState, { log: false })
@@ -57,9 +56,9 @@ before( () => {
 
 beforeEach( () => {
 
-  const testPath = path.normalize(Cypress.spec.relative)
+  const path = Cypress.platform.includes('win') ? Cypress.spec.relative.replaceAll('\\', '/') : Cypress.spec.relative
 
-  const dbState = beforeEachTestSeeds[`${testPath}`]
+  const dbState = beforeEachTestSeeds[`${path}`]
 
   if (dbState) {
     cy.task('testSetupData', dbState, { log: false })
