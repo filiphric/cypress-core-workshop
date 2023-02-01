@@ -31,7 +31,7 @@ it('deleting a list', () => {
   cy.get('[data-cy="list-options"]')
     .click()
 
-  cy.get('[data-cy="dropdown"]')
+  cy.get('[data-cy="list-dropdown"]')
     .should('be.visible')
 
   cy.get('[data-cy="delete-list"]')
