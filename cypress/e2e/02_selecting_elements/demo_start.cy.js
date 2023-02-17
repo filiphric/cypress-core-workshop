@@ -15,7 +15,7 @@ it('cypress commands', { baseUrl: null }, () => {
   cy.get('li')
 
   // searching for child element
-  cy.get('.list')
+  cy.get('ul')
 
   // searching for previous element
   cy.contains('violet')

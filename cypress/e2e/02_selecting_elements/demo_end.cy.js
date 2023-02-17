@@ -22,7 +22,7 @@ it('cypress commands', { baseUrl: null }, () => {
   cy.get('li')
     .eq(2)
 
-  cy.get('.list')
+  cy.get('ul')
     .find('.green')
 
   cy.contains('violet')
