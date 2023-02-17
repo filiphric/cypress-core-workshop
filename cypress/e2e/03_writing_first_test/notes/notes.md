@@ -1,4 +1,4 @@
-# Interacting with the application
+# Writing your first test
 
 ## Basic commands:
 [`.click()`](https://docs.cypress.io/api/commands/click.html#Syntax) - clicks a DOM element

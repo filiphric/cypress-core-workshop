@@ -11,9 +11,9 @@ const empty = require('./fixtures/empty.json')
 const beforeTestSeeds = {
   'cypress/e2e/01_open_app/demo_end.cy.js': singleBoard,
   'cypress/e2e/01_open_app/challenge_solution.cy.js': singleBoardSingleListThreeCards,
-  'cypress/e2e/03_interaction/demo_start.cy.js': twoBoards,
-  'cypress/e2e/03_interaction/demo_end.cy.js': twoBoards,
-  'cypress/e2e/03_interaction/challenge_solution.cy.js': twoBoards,
+  'cypress/e2e/03_writing_first_test/demo_start.cy.js': twoBoards,
+  'cypress/e2e/03_writing_first_test/demo_end.cy.js': twoBoards,
+  'cypress/e2e/03_writing_first_test/challenge_solution.cy.js': twoBoards,
   'cypress/e2e/04_simple_assertions/challenge_solution.cy.js': singleBoard,
   'cypress/e2e/05_chaining_and_retryability/demo_start.cy.js': singleBoardTwoListsFiveCards,
   'cypress/e2e/05_chaining_and_retryability/demo_end.cy.js': singleBoardTwoListsFiveCards,
