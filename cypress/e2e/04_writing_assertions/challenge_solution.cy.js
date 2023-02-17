@@ -9,6 +9,9 @@ beforeEach( () => {
 // challenge #1: create a new list and assert it is visible
 it('creating a list', () => {
 
+  cy.get('[data-cy="create-list"]')
+    .click()
+
   cy.get('[data-cy="add-list-input"]')
     .type('Groceries{enter}')
 
@@ -45,16 +48,6 @@ it('deleting a list', () => {
 // challenge #4: start the test with a single card, check it and then assert it is checked
 it('asserting the checked state', () => {
 
-  // create card firs
-  cy.get('[data-cy="add-list-input"]')
-    .type('Groceries{enter}')
-
-  cy.get('[data-cy="new-card"]')
-    .click()
-
-  cy.get('[data-cy="new-card-input"]')
-    .type('bread{enter}')
-
   // check the checkbox
   cy.get('[data-cy="card-checkbox"]')
     .check()
@@ -75,11 +68,11 @@ it('asserting list name', () => {
 
 })
 
-// challenge #6: assert the text of a card in your list
-it('assert text of created card', () => {
+// challenge #6: assert the text of a card
+it('assert text of a card', () => {
 
   cy.get('[data-cy="card-text"]')
-    .should('have.text', 'bread')
+    .should('have.text', 'Milk')
 
 })
 

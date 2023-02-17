@@ -37,8 +37,8 @@ it('asserting list name', () => {
 
 })
 
-// challenge #6: create a new card and assert its text
-it('assert text of created card', () => {
+// challenge #6: assert the text of a card
+it('assert text of a card', () => {
 
 })
 
