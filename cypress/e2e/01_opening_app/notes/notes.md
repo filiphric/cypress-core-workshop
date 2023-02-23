@@ -1,5 +1,4 @@
-
-# Opening application
+# Opening the application
 
 ## Cypress command
 

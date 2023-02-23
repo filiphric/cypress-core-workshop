@@ -4,26 +4,19 @@ beforeEach( () => {
 
   cy.visit('/board/1')
 
+})
+
+it('cards are visible', () => {
+
+  cy.get('[data-cy="card"]')
+    .should('be.visible')
+
+  // create another card
   cy.get('[data-cy="new-card"]')
     .click()
 
   cy.get('[data-cy="new-card-input"]')
     .type('bread{enter}')
-
-})
-
-it('card is visible', () => {
-
-  cy.get('[data-cy="card"]')
-    .should('be.visible')
-
-})
-
-it('has proper number of cards', () => {
-
-  // create another card
-  cy.get('[data-cy="new-card-input"]')
-    .type('tomatoes{enter}')
 
   cy.get('[data-cy="card"]')
     .should('have.length', 2)
@@ -50,6 +43,6 @@ it('has correct list and card name', () => {
     .should('have.value', 'Groceries')
 
   cy.get('[data-cy="card-text"]')
-    .should('have.text', 'bread')
+    .should('have.text', 'Milk')
 
 })

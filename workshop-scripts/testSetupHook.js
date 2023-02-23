@@ -15,10 +15,10 @@ const beforeTestSeeds = {
   'cypress/e2e/03_writing_first_test/demo_start.cy.js': twoBoards,
   'cypress/e2e/03_writing_first_test/demo_end.cy.js': twoBoards,
   'cypress/e2e/03_writing_first_test/challenge_solution.cy.js': twoBoards,
-  'cypress/e2e/05_chaining_and_retryability/demo_start.cy.js': singleBoardTwoListsFiveCards,
-  'cypress/e2e/05_chaining_and_retryability/demo_end.cy.js': singleBoardTwoListsFiveCards,
-  'cypress/e2e/05_chaining_and_retryability/challenge.cy.js': singleBoardTwoListsFiveCards,
-  'cypress/e2e/05_chaining_and_retryability/challenge_solution.cy.js': singleBoardTwoListsFiveCards,
+  'cypress/e2e/05_effective_command_chaining/demo_start.cy.js': singleBoardTwoListsFiveCards,
+  'cypress/e2e/05_effective_command_chaining/demo_end.cy.js': singleBoardTwoListsFiveCards,
+  'cypress/e2e/05_effective_command_chaining/challenge.cy.js': singleBoardTwoListsFiveCards,
+  'cypress/e2e/05_effective_command_chaining/challenge_solution.cy.js': singleBoardTwoListsFiveCards,
   'cypress/e2e/06_chai_assertions/demo_start.cy.js': singleBoardTwoListsFiveCards,
   'cypress/e2e/06_chai_assertions/end.cy.js': singleBoardTwoListsFiveCards,
   'cypress/e2e/06_chai_assertions/challenge.cy.js': singleBoardTwoListsFiveCards,
@@ -31,9 +31,9 @@ const beforeTestSeeds = {
 }
 
 const beforeEachTestSeeds = {
-  'cypress/e2e/04_writing_assertions/demo_start.cy.js': singleBoardSingleList,
-  'cypress/e2e/04_writing_assertions/demo_end.cy.js': singleBoardSingleList,
-  'cypress/e2e/04_writing_assertions/challenge_solution.cy.js': singleBoardSingleListSingleCard,
+  'cypress/e2e/04_making_assertions/demo_start.cy.js': singleBoardSingleListSingleCard,
+  'cypress/e2e/04_making_assertions/demo_end.cy.js': singleBoardSingleListSingleCard,
+  'cypress/e2e/04_making_assertions/challenge_solution.cy.js': singleBoardSingleListSingleCard,
   'cypress/e2e/11_network_stub/demo_start.cy.js': singleBoard,
   'cypress/e2e/11_network_stub/demo_end.cy.js': singleBoard,
   'cypress/e2e/11_plugins/demo_start.cy.js': empty,

@@ -6,17 +6,7 @@ beforeEach( () => {
 
 })
 
-it('creates a card', () => {
-
-  cy.get('[data-cy="new-card"]')
-    .click()
-
-  cy.get('[data-cy="new-card-input"]')
-    .type('bread{enter}')
-
-})
-
-it('has proper number of cards', () => {
+it('cards are visible', () => {
 
 })
 

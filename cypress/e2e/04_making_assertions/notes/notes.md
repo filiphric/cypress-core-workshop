@@ -1,4 +1,4 @@
-# Assertions
+# Making assertions
 
 ## Commands used:
 [`.should()`](https://docs.cypress.io/api/commands/should.html#Syntax) - the main command in Cypress to make assertions

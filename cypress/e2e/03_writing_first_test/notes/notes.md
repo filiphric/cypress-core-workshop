@@ -6,7 +6,7 @@
 [`.type()`](https://docs.cypress.io/api/commands/type.html#Syntax) - types into text input or textarea
 
 ## How to choose what to test?
-Go for mission critical user stories first, then (maybe) do the rest. Only automate  stuff that saves you time.
+Go for mission critical user stories first, then (maybe) do the rest. Only automate stuff that saves you time.
 
 ## Typing special characters
 Usually wrapped in `{}`. All can be [found in the documentation](https://docs.cypress.io/api/commands/type.html#Arguments).

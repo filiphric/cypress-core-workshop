@@ -29,6 +29,6 @@ There are several great commands that enable you to traverse or filter elements 
 * [Best practices on selectors recommended by Cypress](https://docs.cypress.io/guides/references/best-practices#Selecting-Elements)
 * [documentation for .get() command](https://docs.cypress.io/api/commands/get.html#Usage)
 * [documentation for .contains() command](https://docs.cypress.io/api/commands/contains.html#Usage)
-* [W3 Schools dokumentation for selectors](https://www.w3schools.com/cssref/css_selectors.asp)
+* [W3 Schools documentation for selectors](https://www.w3schools.com/cssref/css_selectors.asp)
 * [Very nice diagram for explaining various relations between elements](https://frontend30.com/css-selectors-cheatsheet/)
 * [game for learning and practicing your CSS selectors](https://flukeout.github.io/)
