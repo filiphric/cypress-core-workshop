@@ -9,6 +9,10 @@ module.exports = defineConfig({
       registerWorkshopScripts(on, config)
       return config
     },
+    // uncomment this if you want to hide xhr requests in your timeline
+    // env: {
+    //   hideXhr: true
+    // },
     baseUrl: 'http://localhost:3000'
   },
 })
