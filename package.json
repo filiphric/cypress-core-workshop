@@ -18,7 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.26.1",
-    "cypress": "^12.3.0",
+    "cypress": "^12.6.0",
     "cypress-plugin-api": "^2.9.1",
     "cypress-plugin-xhr-toggle": "^1.0.0"
   },
