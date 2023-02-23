@@ -6,7 +6,8 @@ module.exports = defineConfig({
   viewportWidth: 660,
   e2e: {
     setupNodeEvents(on, config) {
-      registerWorkshopScripts(on)
+      registerWorkshopScripts(on, config)
+      return config
     },
     baseUrl: 'http://localhost:3000'
   },
