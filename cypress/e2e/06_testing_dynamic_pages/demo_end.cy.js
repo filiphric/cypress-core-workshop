@@ -28,7 +28,7 @@ it('loads all cards', () => {
 
 })
 
-it.only('shows details of "Soap" card', () => {
+it('shows details of "Soap" card', () => {
 
   cy.get('[data-cy=card]') // query
     .eq(4) // query
