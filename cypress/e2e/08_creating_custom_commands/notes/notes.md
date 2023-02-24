@@ -51,3 +51,5 @@ declare namespace Cypress {
 # Useful reading
 * [docs for creating custom commands](https://docs.cypress.io/api/cypress-api/custom-commands.html#Syntax)
 * [docs for creating autocomplete capabilities for custom commands](https://docs.cypress.io/guides/tooling/typescript-support.html#Types-for-custom-commands)
+* [my article on how you can improve your custom command logs](https://filiphric.com/improve-your-custom-command-logs-in-cypress)
+* [fun little thought experiment on how you can make your custom command autocomplete your selectors](https://filiphric.com/autocompleting-selectors-in-cypress-with-typescript)
