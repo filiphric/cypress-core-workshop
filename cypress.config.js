@@ -6,8 +6,13 @@ module.exports = defineConfig({
   viewportWidth: 660,
   e2e: {
     setupNodeEvents(on, config) {
-      registerWorkshopScripts(on)
+      registerWorkshopScripts(on, config)
+      return config
     },
+    // uncomment this if you want to hide xhr requests in your timeline
+    // env: {
+    //   hideXhr: true
+    // },
     baseUrl: 'http://localhost:3000'
   },
 })
