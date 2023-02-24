@@ -1,4 +1,4 @@
-# Headless (run) mode
+# Testing in headless mode
 Headless mode allows us to run our tests via terminal.
 
 By default, Cypress will run all files in `cypress/e2e` folder. This can be configured in `cypress.config.js` with options:
@@ -9,7 +9,7 @@ By default, Cypress will run all files in `cypress/e2e` folder. This can be conf
 
 Or can be defined as a flag in terminal:
 ```
-npx cypress run --spec cypress/e2e/15_headless_run.js
+npx cypress run --spec cypress/e2e/15_headless_runcy..js
 ```
 
 There are many other flags that can be found in the [docs](https://docs.cypress.io/guides/guides/command-line#cypress-run)

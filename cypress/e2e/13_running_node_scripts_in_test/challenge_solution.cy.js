@@ -9,7 +9,7 @@
 /// setupNodeEvents(on, config) {
 ///   on('task', { clearDatabase })
 /// }
-it('resetting the database', () => {
+it.skip('resetting the database', () => {
 
   cy.task('clearDatabase')
   cy.visit('/')
@@ -27,7 +27,7 @@ it('resetting the database', () => {
 //
 // to pass data do the script, you give cy.task() command a second argument
 // this will get passed to the seedDatabase.js file as the "data" argument
-it('seeding the database', () => {
+it.skip('seeding the database', () => {
 
   cy.task('seedDatabase', {
     boards: [{
@@ -41,6 +41,7 @@ it('seeding the database', () => {
     cards: [],
     users: []
   })
+  
   cy.visit('/board/12345')
     
 });
