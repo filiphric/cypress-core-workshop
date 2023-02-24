@@ -10,6 +10,8 @@ beforeEach(() => {
 
 it.only('has zero cards', () => {
 
+  cardsLoadSlowly(3000)
+
   cy.get('[data-cy=card]')
     .should('not.exist')
 
@@ -27,7 +29,7 @@ it('loads all cards', () => {
 it('shows details of "Juice" card', () => {
 
   cy.get('[data-cy=card]')
-    .eq(4)
+    .last()
     .find('[data-cy=card-text]', { timeout: 10000 })
     .should('have.text', 'Juice')
   

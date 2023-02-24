@@ -1,64 +1,47 @@
 /// <reference types="cypress" />
 // ⚠️ database is filled with data before the test
 
-beforeEach( () => {
+import { cardsLoadSlowly, cardsLoadRandomly } from '../../../workshop-scripts/evilCode'
+
+// challenge #1: add proper timeout to this test so that it passes
+it('loads all the cards in board detail', () => {
+
+  cardsLoadSlowly(5000)
+  
   cy.visit('/board/1')
-}) 
 
-// challenge #1: refactor this test so that it uses a single .then() command
-it('cards contain proper text', () => {
-
-  cy.get('[data-cy=list]')
-    .eq(0)
-    .find('[data-cy=card-text]')
-    .as('cards')
-
-  cy.get('@cards')
-    .then( cards => {
-      expect(cards[0]).to.have.text('Milk')
-      expect(cards[1]).to.have.text('Bread')
-      expect(cards[2]).to.have.text('Juice')
-    })
-
-})
-
-// challenge #2: refactor this to test checkboxes in the first list using .then() command
-it('cards are checked', () => {
-
-  cy.get('[data-cy=list]')
-    .eq(0)
-    .find('[data-cy=card-checkbox]')
-    .as('card-checkboxes')
-
-  cy.get('@card-checkboxes')
-    .then( cards => {
-      expect(cards[0]).to.be.checked
-      expect(cards[2]).to.be.checked
-    })
-
+  
+  cy.get('[data-cy=card]', { timeout: 6000 })
+  .should('have.length', 5)
+  
 });
 
-// challenge #3: check number of lists an their names using .then() command
-it('number of lists and list names', () => {
-
-  cy.get('[data-cy=list-name]')
-    .then( lists => {
-
-      expect(lists).to.have.length(2)
-      expect(lists[0]).to.have.value('Groceries')
-      expect(lists[1]).to.have.value('Drugstore')
-
-    })
-
-})
-
-// challenge #4: check visibility of lists using .then() command
-it('list visibility', () => {
-
-  cy.get('[data-cy=list]')
-    .then( list => {
-      expect(list[0]).to.be.visible
-      expect(list[1]).to.be.visible
-    })
+// challenge #2: if you run this test a couple of times, you will find out it is flaky. try to debug it and add a command to query chain that would make it stable
+it('checks the detail of first card', () => {
   
+  cardsLoadRandomly(3000)
+
+  cy.visit('/board/1')
+  
+  cy.get('[data-cy=card]')
+    .first()
+    .contains('Milk')
+    .click()
+
+  cy.get('[data-cy="card-detail-title"]')
+    .should('have.value', 'Milk')
+
 })
+
+// challenge #3: we are getting a false positive within this test. fix it so it fails properly
+it.skip('shows no boards in board list', () => {
+
+  cy.visit('/')
+
+  cy.contains('Loading')
+    .should('not.exist')
+
+  cy.get('[data-cy=board-item]')
+    .should('not.exist')
+  
+});

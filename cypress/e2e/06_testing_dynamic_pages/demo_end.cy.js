@@ -31,7 +31,7 @@ it('loads all cards', () => {
 it('shows details of "Soap" card', () => {
 
   cy.get('[data-cy=card]') // query
-    .eq(4) // query
+    .last() // query
     .find('[data-cy=card-text]', { timeout: 10000 }) // query
     .click() // action
     .get('[data-cy="card-detail-title"]') // query, new chain

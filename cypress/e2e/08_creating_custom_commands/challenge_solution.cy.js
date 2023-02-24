@@ -6,7 +6,10 @@
 
 Cypress.Commands.add('addBoard', (boardName) => {
 
-  cy.get('[data-cy=first-board]')
+  cy.get('[data-cy="create-board"]')
+    .click()
+
+  cy.get('[data-cy="new-board-input"]')
     .type(`${boardName}{enter}`)
   
 })
@@ -24,10 +27,6 @@ Cypress.Commands.add('addCard', (cardName) => {
   cy.get('[data-cy=new-card-input]')
     .type(`${cardName}{enter}`)
   
-})
-
-beforeEach( () => {
-  cy.request('POST', '/api/reset')
 })
 
 it('creates new board, list and card', () => {

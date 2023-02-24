@@ -4,52 +4,37 @@
 beforeEach( () => {
   cy.visit('/board/1')
 }) 
-// challenge #1: refactor this test so that it uses a single .then() command
-it('cards contain proper text', () => {
+// challenge #1: add proper timeout to this test so that it passes
+it('loads all the cards in board detail', () => {
 
-    cy.get('[data-cy=list]')
-      .eq(0)
-      .find('[data-cy=card-text]')
-      .as('cards')
+  cardsLoadSlowly(5000)
+
+  cy.get('[data-cy=card]')
+    .should('have.length', 5)
   
-    cy.get('@cards')
-      .eq(0)
-      .should('have.text', 'Milk')
-  
-    cy.get('@cards')
-      .eq(1)
-      .should('have.text', 'Bread')
-    
-    cy.get('@cards')
-      .eq(2)
-      .should('have.text', 'Juice')
-  
-  })
-
-// challenge #2: refactor this to test checkboxes in the first list using .then() command
-it('cards are checked', () => {
-
-  cy.get('[data-cy=list]')
-    .eq(0)
-    .find('[data-cy=card-checkbox]')
-    .as('card-checkboxes')
-
-  cy.get('@card-checkboxes')
-    .eq(0)
-    .should('be.checked')
-
-  cy.get('@card-checkboxes')
-    .eq(2)
-    .should('be.checked')
-
 });
 
-// challenge #3: check number of lists an their names using .then() command
-it('number of lists and list names', () => {
+// challenge #2: if you run this test a couple of times, you will find out it is flaky. try to debug it and add a command to query chain that would make it stable
+it('checks the detail of first card', () => {
+
+  cardsLoadRandomly(3000)
+
+  cy.get('[data-cy=card]')
+    .first()
+    .click()
+
+  cy.get('[data-cy="card-detail-title"]')
+    .should('have.value', 'Milk')
+
 
 })
 
-// challenge #4: check visibility of lists using .then() command
-it('list visibility', () => {
+// challenge #3: we are getting a false positive within this test. fix it so it fails properly
+it('shows no boards in board list', () => {
+
+  cy.visit('/')
+
+  cy.get('[data-cy=board-item]')
+    .should('not.exist')
   
-})
+});
