@@ -1,4 +1,4 @@
-# HTTP requests
+# API testing requests
 
 ## Sending API requests:
 - two ways of writing `.request()` command

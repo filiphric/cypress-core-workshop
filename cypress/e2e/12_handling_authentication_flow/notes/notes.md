@@ -1,4 +1,4 @@
-# Authentication
+# Handling authentication flow
 
 Authentication is something that often times differs from app to app. But every time we log in, there’s are three parts present in the whole story:
 
@@ -6,8 +6,7 @@ Authentication is something that often times differs from app to app. But every 
 2. Application
 3. Server
 
-In our application, email and password fields get sent via `/api/login` endpoint to the server. Server then responds with an authorization token,
-which is saved to the browser (in the cookies). Our application will then send the authorization token with every api request. This was server knows it communicates with an authenticated and authorized user. In our application this flow is represented in its simplest form, but things can get more complicated as the authorization methods get more advanced.
+In our application, email and password fields get sent via `/api/login` endpoint to the server. Server then responds with an authorization token, which is saved to the browser (in the cookies). Our application will then send the authorization token with every api request. This was server knows it communicates with an authenticated and authorized user. In our application this flow is represented in its simplest form, but things can get more complicated as the authorization methods get more advanced.
 
 To authenticate within our app we can choose two different strategies:
 
@@ -15,17 +14,6 @@ To authenticate within our app we can choose two different strategies:
 2. login via UI and cache the browser session
 
 ## cy.session()
-`cy.session()` is a fairly new command that is currently in experimental mode. To turn it on, add this flag to your `cypress.config.js`:
-```js
-const { defineConfig } = require('cypress')
-
-module.exports = defineConfig({
-  e2e: {
-    experimentalSessionAndOrigin: true
-  }
-})
-```
-
 This command will save all the browser data, like cookies, local storage etc. This means that you can load your browser in a desired state. Remember those three parts I mentioned at the beginning? `cy.session()` got you covered with the **browser** part. This means you can create a sequence of commands and save the state of the browser at the end of that sequence:
 
 ```js

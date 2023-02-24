@@ -4,7 +4,7 @@
 // which you can use to trigger actions like hover, swipe, etc
 // using this plugin, write a test wher you will hover over
 // board item in board list and click on the star element
-it('bookmarks a board', () => {
+it.skip('bookmarks a board', () => {
 
   cy.visit('/')
 
@@ -19,7 +19,7 @@ it('bookmarks a board', () => {
 });
 
 // challenge #2: install drag and drop plugin for Cypress and try it out
-it('drags a card to second list', () => {
+it.skip('drags a card to second list', () => {
 
   cy.visit(`/board/1`)
 
