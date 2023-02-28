@@ -1,7 +1,5 @@
 /// <reference types="cypress" />
 
-import { cardsLoadRandomly, cardsLoadSlowly } from '../../../workshop-scripts/evilCode'
-
 beforeEach(() => {
   
   cy.visit('/board/1')
