@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { cardsLoadSlowly } from '../../../workshop-scripts/evilCode'
+import { cardsLoadRandomly, cardsLoadSlowly } from '../../../workshop-scripts/evilCode'
 
 beforeEach(() => {
 
@@ -8,9 +8,7 @@ beforeEach(() => {
 
 });
 
-it.only('has zero cards', () => {
-
-  cardsLoadSlowly(3000)
+it('has zero cards', () => {
 
   cy.get('[data-cy=card]')
     .should('not.exist')
@@ -26,11 +24,12 @@ it('loads all cards', () => {
 
 })
 
-it('shows details of "Juice" card', () => {
+it.only('shows details of "Juice" card', () => {
 
+  cardsLoadRandomly(4000)
+  
   cy.get('[data-cy=card]')
     .last()
     .find('[data-cy=card-text]', { timeout: 10000 })
-    .should('have.text', 'Juice')
   
 });

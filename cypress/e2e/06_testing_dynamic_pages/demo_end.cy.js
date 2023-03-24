@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { cardsLoadSlowly } from '../../../workshop-scripts/evilCode'
+import { cardsLoadSlowly, cardsLoadRandomly } from '../../../workshop-scripts/evilCode'
 
 beforeEach(() => {
 
@@ -30,9 +30,12 @@ it('loads all cards', () => {
 
 it('shows details of "Soap" card', () => {
 
+  cardsLoadRandomly(4000)
+
   cy.get('[data-cy=card]') // query
     .last() // query
     .find('[data-cy=card-text]', { timeout: 10000 }) // query
+    .should('have.text', 'Soap') // assertion
     .click() // action
     .get('[data-cy="card-detail-title"]') // query, new chain
     .should('have.value', 'Soap') // assertion
