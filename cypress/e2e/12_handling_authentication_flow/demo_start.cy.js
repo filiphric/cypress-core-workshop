@@ -2,16 +2,23 @@
 
 Cypress.Commands.add('login', () => {
 
-  cy.visit('/login')
+  cy.session('user1', () => {
 
-  cy.get('[data-cy="login-email"]')
-    .type('filip@filiphric.sk')
-  
-  cy.get('[data-cy="login-password"]')
-    .type('Asdf.1234#')
+    cy.visit('/login')
 
-  cy.get('[data-cy="login-submit"]')
-    .click()
+    cy.get('[data-cy="login-email"]')
+      .type('filip@filiphric.sk')
+    
+    cy.get('[data-cy="login-password"]')
+      .type('Asdf.1234#')
+
+    cy.get('[data-cy="login-submit"]')
+      .click()
+
+    cy.location('pathname')
+      .should('eq', '/')
+
+  })  
 
 })
 

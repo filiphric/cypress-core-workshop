@@ -12,6 +12,10 @@ it('has a card with due date on 1st March', () => {
 
   cy.contains('[data-cy=card]', 'Mar 01 2022')
 
+  cy.get('[data-cy=list]')
+    .eq(1)
+    .contains('[data-cy=card]', 'Mar 01 2022')
+
 })
 
 it('checks date of a card', () => {
@@ -19,23 +23,20 @@ it('checks date of a card', () => {
   cy.get('[data-cy=card]')
     .eq(2)
     .should('contain.text', 'Juice')
-    .get('[data-cy=due-date]')
+    .find('[data-cy=due-date]')
     .should('have.text', 'Feb 14 2022')
   
 });
 
-it('check text of all cards in first list', () => {
+it.only('check text of all cards in first list', () => {
 
   cy.get('[data-cy=card-text]')
-    .eq(0)
-    .should('have.text', 'Milk')
+    .then((cards) => {
 
-  cy.get('[data-cy=card-text]')
-    .eq(1)
-    .should('have.text', 'Bread')
+      expect(cards[0]).to.have.text('Milk')
+      expect(cards[1]).to.have.text('Bread')
+      expect(cards[2]).to.have.text('Juice')
 
-  cy.get('[data-cy=card-text]')
-    .eq(2)
-    .should('have.text', 'Juice')
+    })
 
 });

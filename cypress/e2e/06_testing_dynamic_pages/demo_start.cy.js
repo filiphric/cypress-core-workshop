@@ -10,26 +10,33 @@ beforeEach(() => {
 
 it('has zero cards', () => {
 
+  cy.contains('Loading')
+    .should('not.exist')
+
   cy.get('[data-cy=card]')
     .should('not.exist')
 
 })
 
-it('loads all cards', () => {
+it('loads all cards',() => {
 
-  cardsLoadSlowly(3000)
+  cardsLoadSlowly(10000)
 
-  cy.get('[data-cy=card]')
+  cy.get('[data-cy=card]', { timeout: 11000 })
     .should('have.length', 5)
 
 })
 
-it.only('shows details of "Juice" card', () => {
+it.only('shows details of "Soap" card', () => {
 
   cardsLoadRandomly(4000)
   
   cy.get('[data-cy=card]')
     .last()
-    .find('[data-cy=card-text]', { timeout: 10000 })
+    .should('contain.text', 'Soap')
+    .click()
+
+  cy.get('[data-cy="card-detail-title"]')
+    .should('have.value', 'Soap') 
   
 });
